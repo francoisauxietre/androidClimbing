@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controller.GameActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:orientation="horizontal"
+            android:padding="5sp">
+
+            <TextView
+                android:id="@+id/activity_game_button_technical"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_game_technical" />
+
+            <RatingBar
+                android:id="@+id/activity_game_ratingbar_technical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="0.0"
+                android:stepSize="1.0" />
+
+            <ImageButton
+
+                android:id="@+id/activity_game_button_reset_technical"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/reset" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="left"
+            android:padding="5sp">
+
+            <TextView
+                android:id="@+id/activity_game_button_mental"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_game_mental" />
+
+            <RatingBar
+                android:id="@+id/activity_game_ratingbar_mental"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="0.0"
+                android:stepSize="1.0" />
+
+            <ImageButton
+                android:id="@+id/activity_game_button_reset_mental"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/reset" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5sp">
+
+            <TextView
+                android:id="@+id/activity_game_button_tactical"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_game_tactical" />
+
+            <RatingBar
+                android:id="@+id/activity_game_ratingbar_tactical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="0.0"
+                android:stepSize="1.0" />
+
+            <ImageButton
+                android:id="@+id/activity_game_button_reset_tactical"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/reset" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5sp">
+
+            <TextView
+                android:id="@+id/activity_game_button_physical"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_game_physical" />
+
+            <RatingBar
+                android:id="@+id/activity_game_ratingbar_physical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="0.0"
+                android:stepSize="1.0" />
+
+            <ImageButton
+                android:id="@+id/activity_game_button_reset_physical"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/reset" />
+        </LinearLayout>
+
+        <Spinner
+            android:id="@+id/activity_game_spinner_level"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown" />
+
+        <TextView
+            android:id="@+id/activity_game_button_star"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_game_star" />
+
+        <RatingBar
+            android:id="@+id/activity_game_ratingbar_star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="0.0"
+            android:stepSize="1.0" />
+
+
+
+
+        <Button
+            android:id="@+id/activity_main_button_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_game_save" />
+
+        <TextView
+            android:id="@+id/activity_game_textview_total"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#B91515"
+            android:text="@string/acitvity_game_total"
+            android:textSize="30sp" />
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

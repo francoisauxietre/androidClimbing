@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".controller.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/activity_main_button_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/home" />
+
+        <Button
+            android:id="@+id/activity_main_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="147dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginBottom="30dp"
+            android:text="Button" />
+
+        <TextView
+            android:id="@+id/activity_main_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2px"
+            android:paddingStart="2px"
+            android:paddingLeft="2px"
+            android:paddingTop="2px"
+            android:paddingEnd="2px"
+            android:paddingRight="2px"
+            android:paddingBottom="2px"
+            android:text="Hello World!"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/activity_main_hello_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="177dp"
+            android:hint="essai"
+            android:text="essai" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

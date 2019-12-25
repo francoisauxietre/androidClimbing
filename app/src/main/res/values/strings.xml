@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">ClimbingAndroid</string>
+    <string name="textviewHome">TextViewHome</string>
+    <string name="start">Start</string>
+    <string name="buttonAccueil">Accueil</string>
+    <string name="home">Home</string>
+    <string name="activity_game_technical">Technical</string>
+    <string name="activity_game_tactical">Tactical</string>
+    <string name="activity_game_mental">Mental</string>
+    <string name="activity_game_physical">Physical</string>
+    <string name="activity_game_save">Save</string>
+    <string name="acitvity_game_total">Total</string>
+    <string-array name="climbingroute_array">
+        <item>4a</item>
+        <item>4b</item>
+        <item>4c</item>
+        <item>5a</item>
+        <item>5b</item>
+        <item>5c</item>
+        <item>6a</item>
+        <item>6b</item>
+    </string-array>
+    <string name="activity_game_star">Star</string>
+    <string name="activity_game_infos">infos</string>
+    <string name="title_activity_card">CardActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+
+
+</resources>
