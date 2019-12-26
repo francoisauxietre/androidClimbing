@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="textview">TextView</string>
+    <string name="checkbox0">Image</string>
+    <string name="checkbox1">Bonus</string>
+    <string name="checkbox2">Infos</string>
+</resources>

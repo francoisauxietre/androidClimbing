@@ -145,7 +145,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        buttonReset1 = findViewById(R.id.activity_game_button_reset_tactical);
+        buttonReset1 = findViewById(R.id.activity_game_button_reset_mental);
         buttonReset1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -153,7 +153,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 ratingBar1.setRating(0);
             }
         });
-        buttonReset2 = findViewById(R.id.activity_game_button_reset_mental);
+        buttonReset2 = findViewById(R.id.activity_game_button_reset_tactical);
         buttonReset2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -176,8 +176,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public void onClick(View v) {
-//                Intent cardActivityIntent = new Intent(GameActivity.this, CardActivity.class);
-//                startActivity(cardActivityIntent);
+                Intent cardActivityIntent = new Intent(GameActivity.this, CardActivity.class);
+                startActivity(cardActivityIntent);
 
                 Toast.makeText(GameActivity.this,
                         String.valueOf(ratingBarStar.getRating()),

@@ -28,6 +28,17 @@
     <string name="title_notifications">Notifications</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
-
+    <string name="activity_card_textview_level">Level</string>
+    <string name="acivity_api_checkbox1"></string>
+    <string name="textview">TextView</string>
+    <string name="checkbox0">Image</string>
+    <string name="checkbox1">Bonus</string>
+    <string name="checkbox2">Infos</string>
+    <string name="activity_main_button_api">Api</string>
+    <string name="activity_main_button_climber">Climber</string>
+    <string name="activity_main_button_home">Home</string>
+    <string name="activity_main_button_card">Card</string>
+    <string name="test">Test</string>
+<string name="acitvity_main_url">Url</string>
 
 </resources>

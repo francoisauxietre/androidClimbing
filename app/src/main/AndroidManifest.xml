@@ -11,10 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".controller.UrlActivity"></activity>
+        <activity android:name=".controller.ClimberActivity" />
+        <activity android:name=".controller.ApiActivity" />
         <activity
             android:name=".controller.CardActivity"
             android:label="@string/title_activity_card"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".controller.HomeActivity" />
         <activity android:name=".controller.GameActivity" />
         <activity android:name=".controller.MainActivity">
