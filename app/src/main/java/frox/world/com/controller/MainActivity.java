@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private Button climber;
     private Button card;
     private Button url;
+    private String user;
 
 
     @Override
@@ -83,7 +84,8 @@ public class MainActivity extends AppCompatActivity {
                 int duration = Toast.LENGTH_SHORT;
                 Toast.makeText(context, text, duration).show();
                 Intent gameActivityIntent = new Intent(MainActivity.this, GameActivity.class);
-                gameActivityIntent.putExtra("user", editText.getText());
+                user = editText.getText().toString();
+                gameActivityIntent.putExtra("user",user);
                 startActivity(gameActivityIntent);
             }
         });

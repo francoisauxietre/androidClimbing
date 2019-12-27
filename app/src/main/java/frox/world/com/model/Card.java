@@ -14,9 +14,10 @@ public class Card implements Serializable {
     private float latitude;
     private float longitude;
     private int difficulty;
-
     private String nom;
     long id;
 
+    public Card() {
+    }
 
 }

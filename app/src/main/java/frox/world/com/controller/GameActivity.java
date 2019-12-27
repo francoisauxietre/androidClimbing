@@ -1,8 +1,11 @@
 package frox.world.com.controller;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -40,14 +43,16 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     private ImageButton buttonReset2;
     private ImageButton buttonReset3;
     private String user;
+    private String[] climbingrouteArray;
+    private Intent intentGame;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        Intent intent = getIntent();
-        user = intent.getStringExtra("user");
+        intentGame = getIntent();
+        user = intentGame.getStringExtra("user");
         Spinner spinnerTechnical = findViewById(R.id.activity_game_spinner_level);
         spinner(spinnerTechnical);
         addListenerOnRatingBar();
@@ -68,8 +73,11 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
     public void spinner(Spinner spinner) {
 
-        String[] items = new String[]{"1", "2", "3", "4", "5", "6"};
+        //les deux methodes marches
+        Resources res = getResources();
+        climbingrouteArray = res.getStringArray(R.array.climbingroute_array);
 
+        //R.array.climbingroute_array
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this,
                 R.array.climbingroute_array,
@@ -179,20 +187,50 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public void onClick(View v) {
-                Intent cardActivityIntent = new Intent(GameActivity.this, CardActivity.class);
-                card = new Card();
-                card.setNom(user);
-                cardActivityIntent.putExtra("card", card);
-                startActivity(cardActivityIntent);
+                //creation de la boite de dialogue
+                save();
+//                Intent cardActivityIntent = new Intent(GameActivity.this, CardActivity.class);
+//                card = new Card();
+//                card.setNom(user);
+//                cardActivityIntent.putExtra("card", card);
+//                startActivity(cardActivityIntent);
 
-
-                Toast.makeText(GameActivity.this,
-                        String.valueOf(ratingBarStar.getRating()),
-                        Toast.LENGTH_SHORT).show();
+//                Toast.makeText(GameActivity.this,
+//                        String.valueOf(ratingBarStar.getRating()),
+//                        Toast.LENGTH_SHORT).show();
 
             }
 
         });
+
+    }
+
+    //creation d'une boite de dialogue generique avec recuperation du message en fonction de la langue de l'utilisateur
+    private void save(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        String saving = getString(R.string.activity_game_saving);
+        card = new Card();
+        card.setNom(user);
+        card.setBonus("2");
+        card.setBonus("3");
+
+        //"Your new card is " + ratingBarStar.getRating()+
+        builder.setTitle(saving)
+                .setMessage(card.toString()+intentGame.getStringExtra("user"))
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent cardActivityIntent = new Intent(GameActivity.this, CardActivity.class);
+
+                        cardActivityIntent.putExtra("card", card);
+                        startActivity(cardActivityIntent);
+
+                        finish();
+                    }
+                })
+                .create()
+                .show();
 
     }
 }
