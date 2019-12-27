@@ -74,5 +74,29 @@
         <item>10c</item>
         <item>10c+</item>
     </string-array>
+    <string name="activity_card_bottom_left_corner">Corner</string>
+    <string name="activity_card_android"></string>
+    <string name="activity_card_physical"></string>
+<string name="activity_card_mental"></string>
+<string name="activity_card_tactical"></string>
+<string name="activity_card_technical"></string>
+    <string name="activity_card_name"></string>
+    <string name="activity_card_image"></string>
+    <string name="activity_card_level"></string>
+    <string name="activity_card_star"></string>
+    <string name="activity_card_rank"></string>
+    <string name="activity_card_demi_left"></string>
+    <string name="activity_card_demi_right"></string>
+    <string name="activity_card_top_right_corner"></string>
+    <string name="activity_card_bottom_right_corner"></string>
+    <string name="activity_card_back"></string>
+    <string name="activity_card_textview_name"></string>
+    <string name="activity_card_qrcode"></string>
+    <string name="activity_card_top_leftt_corner"></string>
+    <string name="acitvity_card_bonus">Bonus</string>
+    <string name="activity_card_user">User</string>
+    <string name="activity_card_background1"></string>
+    <string name="activity_card_background2"></string>
+
 
 </resources>
