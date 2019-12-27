@@ -98,5 +98,25 @@
     <string name="activity_card_background1"></string>
     <string name="activity_card_background2"></string>
 
-
+    <string name="acitvity_card_technical_progress1"></string>
+    <string name="acitvity_card_technical_progress2"></string>
+    <string name="acitvity_card_technical_progress3"></string>
+    <string name="acitvity_card_technical_progress4"></string>
+    <string name="acitvity_card_technical_progress5"></string>
+    <string name="acitvity_card_tactical_progress1"></string>
+    <string name="acitvity_card_tactical_progress2"></string>
+    <string name="acitvity_card_tactical_progress3"></string>
+    <string name="acitvity_card_tactical_progress4"></string>
+    <string name="acitvity_card_tactical_progress5"></string>
+    <string name="acitvity_card_mental_progress1"></string>
+    <string name="acitvity_card_mental_progress2"></string>
+    <string name="acitvity_card_mental_progress3"></string>
+    <string name="acitvity_card_mental_progress4"></string>
+    <string name="acitvity_card_mental_progress5"></string>
+    <string name="acitvity_card_physical_progress1"></string>
+    <string name="acitvity_card_physical_progress2"></string>
+    <string name="acitvity_card_physical_progress3"></string>
+    <string name="acitvity_card_physical_progress4"></string>
+    <string name="acitvity_card_physical_progress5"></string>
+    <string name="fr">us</string>
 </resources>

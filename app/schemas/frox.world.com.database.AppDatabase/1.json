@@ -1,0 +1,118 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "a63bd3aa5ef76b7b45d085d214ba7498",
+    "entities": [
+      {
+        "tableName": "Card",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uid` INTEGER NOT NULL, `first_name` TEXT, `last_name` TEXT, `bonus` TEXT, `info` TEXT, `photo` TEXT, `date` INTEGER, `difficuty` TEXT, `physical` INTEGER, `technical` INTEGER, `tactical` INTEGER, `mental` INTEGER, `qrcode` TEXT, `star` INTEGER NOT NULL, `climbing_route_name` TEXT, PRIMARY KEY(`uid`))",
+        "fields": [
+          {
+            "fieldPath": "uid",
+            "columnName": "uid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "firstName",
+            "columnName": "first_name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lastName",
+            "columnName": "last_name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bonus",
+            "columnName": "bonus",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "info",
+            "columnName": "info",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "photo",
+            "columnName": "photo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "date",
+            "columnName": "date",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "difficuty",
+            "columnName": "difficuty",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "physical",
+            "columnName": "physical",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "technical",
+            "columnName": "technical",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tactical",
+            "columnName": "tactical",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mental",
+            "columnName": "mental",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "qrcode",
+            "columnName": "qrcode",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "star",
+            "columnName": "star",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "climbingRouteName",
+            "columnName": "climbing_route_name",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "uid"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a63bd3aa5ef76b7b45d085d214ba7498')"
+    ]
+  }
+}

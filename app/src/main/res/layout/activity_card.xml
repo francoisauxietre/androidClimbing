@@ -4,13 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
     tools:context=".controller.CardActivity">
 
 
     <ImageView
         android:id="@+id/activity_card_back"
         android:layout_width="400dp"
-        android:layout_height="730dp"
+        android:layout_height="719dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="4dp"
         android:contentDescription="@string/activity_card_back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,11 +25,11 @@
 
     <TextView
         android:id="@+id/activity_card_textview_name"
-        android:contentDescription="@string/activity_card_textview_name"
         android:layout_width="140dp"
         android:layout_height="30dp"
         android:layout_marginTop="220dp"
         android:layout_marginEnd="40dp"
+        android:contentDescription="@string/activity_card_textview_name"
         android:text="Orpierre"
         android:textAlignment="center"
         android:textColor="#000000"
@@ -34,80 +37,35 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/activity_card_top_leftt_corner"
-        android:contentDescription="@string/activity_card_top_leftt_corner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="100dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cuivre" />
-
-    <ImageView
-        android:id="@+id/activity_card_bottom_left_corner"
-        android:contentDescription="@string/activity_card_bottom_left_corner"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="95dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/cuivre" />
-
-    <ImageView
-        android:id="@+id/activity_card_bottom_right_corner"
-        android:contentDescription="@string/activity_card_bottom_right_corner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="95dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/cuivre" />
-
-    <ImageView
-        android:id="@+id/activity_card_top_right_corner"
-        android:contentDescription="@string/activity_card_top_right_corner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cuivre" />
-
 
     <ImageView
         android:id="@+id/activity_card_demi_right"
-        android:contentDescription="@string/activity_card_demi_right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
         android:layout_marginEnd="90dp"
+        android:contentDescription="@string/activity_card_demi_right"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/demi_rond_droite" />
 
     <ImageView
         android:id="@+id/activity_card_demi_left"
-        android:contentDescription="@string/activity_card_demi_left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="90dp"
         android:layout_marginTop="150dp"
+        android:contentDescription="@string/activity_card_demi_left"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/demi_rond_gauche" />
 
     <ImageView
         android:id="@+id/activity_card_qrcode"
-        android:contentDescription="@string/activity_card_qrcode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="130dp"
+        android:contentDescription="@string/activity_card_qrcode"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/activity_card_back"
@@ -115,9 +73,9 @@
 
     <TextView
         android:id="@+id/activity_card_star"
-        android:contentDescription="@string/activity_card_star"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:contentDescription="@string/activity_card_star"
         android:paddingLeft="10sp"
         android:paddingTop="12sp"
         android:text="3 *"
@@ -130,29 +88,29 @@
 
     <TextView
         android:id="@+id/activity_card_rank"
-        android:contentDescription="@string/activity_card_rank"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:contentDescription="@string/activity_card_rank"
         android:paddingLeft="-10sp"
         android:paddingTop="16sp"
         android:text="1/200"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="18sp"
+        android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/activity_card_qrcode"
         app:layout_constraintTop_toTopOf="@+id/activity_card_demi_right" />
 
     <TextView
         android:id="@+id/activity_card_level"
-        android:contentDescription="@string/activity_card_level"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:text="8a"
+        android:contentDescription="@string/activity_card_level"
         android:paddingTop="5sp"
-        android:textSize="45dp"
-        android:textColor="#075E00"
+        android:text="8a"
         android:textAlignment="center"
+        android:textColor="#075E00"
+        android:textSize="45dp"
         app:layout_constraintBottom_toBottomOf="@+id/activity_card_qrcode"
         app:layout_constraintEnd_toStartOf="@+id/activity_card_demi_right"
         app:layout_constraintStart_toEndOf="@+id/activity_card_demi_left"
@@ -161,10 +119,10 @@
 
     <ImageView
         android:id="@+id/activity_card_image"
-        android:contentDescription="@string/activity_card_image"
         android:layout_width="261dp"
         android:layout_height="206dp"
         android:layout_marginTop="242dp"
+        android:contentDescription="@string/activity_card_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/activity_card_back"
@@ -172,106 +130,347 @@
 
     <TextView
         android:id="@+id/activity_card_name"
-        android:contentDescription="@string/activity_card_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="-2dp"
+        android:contentDescription="@string/activity_card_name"
         android:text="trop belle pour toi"
-        android:textSize="20sp"
         android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="@+id/activity_card_image"
         app:layout_constraintTop_toBottomOf="@+id/activity_card_image" />
 
-    <TextView
-        android:id="@+id/activity_card_technical"
-        android:contentDescription="@string/activity_card_technical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:text="TextView"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_card_name" />
 
-    <TextView
-        android:id="@+id/activity_card_tactical"
-        android:contentDescription="@string/activity_card_tactical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="@+id/activity_card_technical"
-        app:layout_constraintTop_toBottomOf="@+id/activity_card_technical" />
 
-    <TextView
-        android:id="@+id/activity_card_mental"
-        android:contentDescription="@string/activity_card_mental"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="@+id/activity_card_tactical"
-        app:layout_constraintTop_toBottomOf="@+id/activity_card_tactical" />
 
-    <TextView
-        android:id="@+id/activity_card_physical"
-        android:contentDescription="@string/activity_card_physical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="@+id/activity_card_mental"
-        app:layout_constraintTop_toBottomOf="@+id/activity_card_mental" />
 
     <ImageView
         android:id="@+id/activity_card_android"
-        android:contentDescription="@string/activity_card_android"
         android:layout_width="36dp"
         android:layout_height="293dp"
-        android:layout_marginStart="-5dp"
-        android:layout_marginTop="430dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="530dp"
+        android:contentDescription="@string/activity_card_android"
         app:layout_constraintStart_toEndOf="@+id/activity_card_image"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/android" />
 
     <ImageView
         android:id="@+id/activity_card_background1"
-        android:contentDescription="@string/activity_card_background1"
-        android:layout_width="92dp"
-        android:layout_height="36dp"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
         android:layout_marginTop="5dp"
+        android:alpha="0.2"
+        android:contentDescription="@string/activity_card_background1"
         app:layout_constraintStart_toStartOf="@+id/activity_card_physical"
         app:layout_constraintTop_toBottomOf="@+id/activity_card_physical"
         app:srcCompat="@drawable/blanc_340_120" />
 
     <ImageView
         android:id="@+id/activity_card_background2"
-        android:contentDescription="@string/activity_card_background2"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
 
-        android:layout_width="92dp"
-        android:layout_height="36dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="4dp"
+        android:alpha="0.2"
+        android:contentDescription="@string/activity_card_background2"
         app:layout_constraintStart_toEndOf="@+id/activity_card_background1"
         app:layout_constraintTop_toBottomOf="@+id/activity_card_physical"
         app:srcCompat="@drawable/blanc_340_120" />
 
     <TextView
         android:id="@+id/activity_card_bonus"
-        android:contentDescription="@string/acitvity_card_bonus"
-        android:layout_width="93dp"
+        android:layout_width="80dp"
         android:layout_height="35dp"
+        android:contentDescription="@string/acitvity_card_bonus"
         android:text="@string/acitvity_card_bonus"
+        android:paddingTop="4dp"
+        android:textAlignment="center"
         app:layout_constraintStart_toStartOf="@+id/activity_card_background1"
         app:layout_constraintTop_toTopOf="@+id/activity_card_background1" />
 
     <TextView
         android:id="@+id/activity_card_user"
-        android:contentDescription="@string/activity_card_user"
-        android:layout_width="93dp"
+        android:layout_width="80dp"
         android:layout_height="35dp"
+        android:paddingTop="4dp"
+        android:textAlignment="center"
+        android:contentDescription="@string/activity_card_user"
         android:text="@string/activity_card_user"
         app:layout_constraintStart_toStartOf="@+id/activity_card_background2"
         app:layout_constraintTop_toTopOf="@+id/activity_card_background2" />
+
+    <!--    progress bar technical-->
+    <TextView
+        android:id="@+id/activity_card_technical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="0dp"
+        android:contentDescription="@string/activity_card_technical"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_card_name" />
+    <ImageView
+        android:id="@+id/activity_card_technical_progress1"
+        android:contentDescription="@string/acitvity_card_technical_progress1"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/activity_card_technical"
+        app:layout_constraintTop_toTopOf="@+id/activity_card_technical"
+        android:alpha="1"
+        app:srcCompat="@drawable/progress1" />
+
+    <ImageView
+        android:id="@+id/activity_card_technical_progress2"
+        android:contentDescription="@string/acitvity_card_technical_progress2"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/activity_card_technical_progress1"
+        app:layout_constraintTop_toTopOf="@+id/activity_card_technical_progress1"
+        android:alpha="1"
+        app:srcCompat="@drawable/progress2" />
+
+    <ImageView
+        android:id="@+id/activity_card_technical_progress3"
+        android:contentDescription="@string/acitvity_card_technical_progress3"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/activity_card_technical_progress2"
+        app:layout_constraintTop_toTopOf="@+id/activity_card_technical_progress2"
+        android:alpha="1"
+        app:srcCompat="@drawable/progress3" />
+
+    <ImageView
+        android:id="@+id/activity_card_technical_progress4"
+        android:contentDescription="@string/acitvity_card_technical_progress4"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/activity_card_technical_progress3"
+        app:layout_constraintTop_toTopOf="@+id/activity_card_technical_progress3"
+        android:alpha="1"
+        app:srcCompat="@drawable/progress4" />
+
+    <ImageView
+        android:id="@+id/activity_card_technical_progress5"
+        android:contentDescription="@string/acitvity_card_technical_progress5"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/activity_card_technical_progress4"
+        app:layout_constraintTop_toTopOf="@+id/activity_card_technical_progress4"
+        android:alpha="1"
+        app:srcCompat="@drawable/progress5" />
+
+    <!--    progress bar-->
+    <TextView
+        android:id="@+id/activity_card_tactical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:contentDescription="@string/activity_card_tactical"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/activity_card_technical"
+        app:layout_constraintTop_toBottomOf="@+id/activity_card_technical" />
+
+    <ImageView
+        android:id="@+id/activity_card_tactical_progress1"
+        android:contentDescription="@string/acitvity_card_tactical_progress1"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/activity_card_tactical"
+        app:layout_constraintTop_toTopOf="@+id/activity_card_tactical"
+        android:alpha="1"
+        app:srcCompat="@drawable/progress1" />
+
+    <ImageView
+        android:id="@+id/activity_card_tactical_progress2"
+        android:contentDescription="@string/acitvity_card_tactical_progress2"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/activity_card_tactical_progress1"
+        app:layout_constraintTop_toTopOf="@+id/activity_card_tactical_progress1"
+        android:alpha="1"
+        app:srcCompat="@drawable/progress2" />
+
+    <ImageView
+        android:id="@+id/activity_card_tactical_progress3"
+        android:contentDescription="@string/acitvity_card_tactical_progress3"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/activity_card_tactical_progress2"
+        app:layout_constraintTop_toTopOf="@+id/activity_card_tactical_progress2"
+        android:alpha="1"
+        app:srcCompat="@drawable/progress3" />
+
+    <ImageView
+        android:id="@+id/activity_card_tactical_progress4"
+        android:contentDescription="@string/acitvity_card_tactical_progress4"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/activity_card_tactical_progress3"
+        app:layout_constraintTop_toTopOf="@+id/activity_card_tactical_progress3"
+        android:alpha="1"
+        app:srcCompat="@drawable/progress4" />
+
+    <ImageView
+        android:id="@+id/activity_card_tactical_progress5"
+        android:contentDescription="@string/acitvity_card_tactical_progress5"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/activity_card_tactical_progress4"
+        app:layout_constraintTop_toTopOf="@+id/activity_card_tactical_progress4"
+        android:alpha="1"
+        app:srcCompat="@drawable/progress5" />
+
+    <!-- mental -->
+    <TextView
+        android:id="@+id/activity_card_mental"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:contentDescription="@string/activity_card_mental"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/activity_card_tactical"
+        app:layout_constraintTop_toBottomOf="@+id/activity_card_tactical" />
+    
+    <ImageView
+        android:id="@+id/activity_card_mental_progress1"
+        android:contentDescription="@string/acitvity_card_mental_progress1"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/activity_card_mental"
+        app:layout_constraintTop_toTopOf="@+id/activity_card_mental"
+        android:alpha="1"
+        app:srcCompat="@drawable/progress1" />
+
+    <ImageView
+        android:id="@+id/activity_card_mental_progress2"
+        android:contentDescription="@string/acitvity_card_mental_progress2"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/activity_card_mental_progress1"
+        app:layout_constraintTop_toTopOf="@+id/activity_card_mental_progress1"
+        android:alpha="1"
+        app:srcCompat="@drawable/progress2" />
+
+    <ImageView
+        android:id="@+id/activity_card_mental_progress3"
+        android:contentDescription="@string/acitvity_card_mental_progress3"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/activity_card_mental_progress2"
+        app:layout_constraintTop_toTopOf="@+id/activity_card_mental_progress2"
+        android:alpha="1"
+        app:srcCompat="@drawable/progress3" />
+
+    <ImageView
+        android:id="@+id/activity_card_mental_progress4"
+        android:contentDescription="@string/acitvity_card_mental_progress4"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/activity_card_mental_progress3"
+        app:layout_constraintTop_toTopOf="@+id/activity_card_mental_progress3"
+        android:alpha="1"
+        app:srcCompat="@drawable/progress4" />
+
+    <ImageView
+        android:id="@+id/activity_card_mental_progress5"
+        android:contentDescription="@string/acitvity_card_mental_progress5"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/activity_card_mental_progress4"
+        app:layout_constraintTop_toTopOf="@+id/activity_card_mental_progress4"
+        android:alpha="1"
+        app:srcCompat="@drawable/progress5" />
+    
+    <!-- physical -->
+
+
+
+
+    <TextView
+        android:id="@+id/activity_card_physical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:contentDescription="@string/activity_card_physical"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/activity_card_mental"
+        app:layout_constraintTop_toBottomOf="@+id/activity_card_mental" />
+
+    <ImageView
+        android:id="@+id/activity_card_physical_progress1"
+        android:contentDescription="@string/acitvity_card_physical_progress1"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/activity_card_physical"
+        app:layout_constraintTop_toTopOf="@+id/activity_card_physical"
+        android:alpha="1"
+        app:srcCompat="@drawable/progress1" />
+
+    <ImageView
+        android:id="@+id/activity_card_physical_progress2"
+        android:contentDescription="@string/acitvity_card_physical_progress2"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/activity_card_physical_progress1"
+        app:layout_constraintTop_toTopOf="@+id/activity_card_physical_progress1"
+        android:alpha="1"
+        app:srcCompat="@drawable/progress2" />
+
+    <ImageView
+        android:id="@+id/activity_card_physical_progress3"
+        android:contentDescription="@string/acitvity_card_physical_progress3"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/activity_card_physical_progress2"
+        app:layout_constraintTop_toTopOf="@+id/activity_card_physical_progress2"
+        android:alpha="1"
+        app:srcCompat="@drawable/progress3" />
+
+    <ImageView
+        android:id="@+id/activity_card_physical_progress4"
+        android:contentDescription="@string/acitvity_card_physical_progress4"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/activity_card_physical_progress3"
+        app:layout_constraintTop_toTopOf="@+id/activity_card_physical_progress3"
+        android:alpha="1"
+        app:srcCompat="@drawable/progress4" />
+
+    <ImageView
+        android:id="@+id/activity_card_physical_progress5"
+        android:contentDescription="@string/acitvity_card_physical_progress5"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/activity_card_physical_progress4"
+        app:layout_constraintTop_toTopOf="@+id/activity_card_physical_progress4"
+        android:alpha="1"
+        app:srcCompat="@drawable/progress5" />
+    
+    
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
