@@ -23,7 +23,7 @@ public class CardActivity extends AppCompatActivity {
         Intent intent = getIntent();
         card = (Card) intent.getSerializableExtra("card");
         nom = findViewById(R.id.activity_card_textview_name);
-        nom.setText(card.getNom());
+        nom.setText(card.getFirstName());
         //save();
 
     }

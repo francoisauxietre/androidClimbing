@@ -1,5 +1,8 @@
 package frox.world.com.controller;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
+import androidx.room.TypeConverter;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -14,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import frox.world.com.R;
+import frox.world.com.database.AppDatabase;
 import frox.world.com.model.User;
 
 import android.app.ProgressDialog;
@@ -25,6 +29,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Date;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -38,12 +43,15 @@ public class MainActivity extends AppCompatActivity {
     private Button card;
     private Button url;
     private String user;
-
+    private AppDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        db = Room.databaseBuilder(getApplicationContext(),
+                AppDatabase.class, "database-name").build();
 
        // textView = findViewById(R.id.activity_main_textview);
         editText = findViewById(R.id.activity_main_hello_input);
@@ -117,6 +125,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    public static class Converters {
+        @TypeConverter
+        public static Date fromTimestamp(Long value) {
+            return value == null ? null : new Date(value);
+        }
 
+        @TypeConverter
+        public static Long dateToTimestamp(Date date) {
+            return date == null ? null : date.getTime();
+        }
+    }
 
 }

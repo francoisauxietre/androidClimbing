@@ -211,9 +211,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
         String saving = getString(R.string.activity_game_saving);
         card = new Card();
-        card.setNom(user);
+        card.setFirstName(user);
         card.setBonus("2");
-        card.setBonus("3");
 
         //"Your new card is " + ratingBarStar.getRating()+
         builder.setTitle(saving)
