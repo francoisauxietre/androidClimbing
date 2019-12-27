@@ -28,10 +28,10 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     private RatingBar ratingBar2;
     private RatingBar ratingBar3;
 
-    private float rating0 =0;
-    private float rating1 =0;
-    private float rating2 =0;
-    private float rating3 =0;
+    private float rating0 = 0;
+    private float rating1 = 0;
+    private float rating2 = 0;
+    private float rating3 = 0;
 
     private TextView activity_game_textview_total;
     private Button buttonSave;
@@ -39,19 +39,19 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     private ImageButton buttonReset1;
     private ImageButton buttonReset2;
     private ImageButton buttonReset3;
+    private String user;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-
+        Intent intent = getIntent();
+        user = intent.getStringExtra("user");
         Spinner spinnerTechnical = findViewById(R.id.activity_game_spinner_level);
         spinner(spinnerTechnical);
-
         addListenerOnRatingBar();
         addListenerOnButton();
-
 
     }
 
@@ -68,10 +68,13 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
     public void spinner(Spinner spinner) {
 
-        String[] items = new String[]{"1", "2", "3", "4a", "4b", "4c"};
+        String[] items = new String[]{"1", "2", "3", "4", "5", "6"};
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.climbingroute_array, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.climbingroute_array,
+                android.R.layout.simple_spinner_item);
+
 //set the spinners adapter to the previously created one.
         spinner.setAdapter(adapter);
     }
@@ -90,8 +93,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         ratingBar0.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             public void onRatingChanged(RatingBar ratingBar, float rating,
                                         boolean fromUser) {
-                rating0 = (int)rating;
-               updateRating();
+                rating0 = (int) rating;
+                updateRating();
                 System.out.println(rating0);
             }
         });
@@ -100,7 +103,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         ratingBar1.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             public void onRatingChanged(RatingBar ratingBar, float rating,
                                         boolean fromUser) {
-                rating1 = (int)rating;
+                rating1 = (int) rating;
                 updateRating();
             }
         });
@@ -109,7 +112,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         ratingBar2.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             public void onRatingChanged(RatingBar ratingBar, float rating,
                                         boolean fromUser) {
-                rating2 = (int)rating;
+                rating2 = (int) rating;
                 updateRating();
             }
         });
@@ -117,7 +120,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         ratingBar3.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             public void onRatingChanged(RatingBar ratingBar, float rating,
                                         boolean fromUser) {
-                rating3 = (int)rating;
+                rating3 = (int) rating;
                 updateRating();
             }
         });
@@ -125,15 +128,15 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    public void updateRating (){
-        String rating = ""+ (rating0 + rating1 + rating2 + rating3)/4 ;
+    public void updateRating() {
+        String rating = "" + (rating0 + rating1 + rating2 + rating3) / 4;
         activity_game_textview_total.setText(rating);
     }
 
 
     public void addListenerOnButton() {
 
-        ratingBarStar =findViewById(R.id.activity_game_ratingbar_star);
+        ratingBarStar = findViewById(R.id.activity_game_ratingbar_star);
         buttonSave = findViewById(R.id.activity_main_button_save);
         buttonReset0 = findViewById(R.id.activity_game_button_reset_technical);
         buttonReset0.setOnClickListener(new View.OnClickListener() {
@@ -177,7 +180,11 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View v) {
                 Intent cardActivityIntent = new Intent(GameActivity.this, CardActivity.class);
+                card = new Card();
+                card.setNom(user);
+                cardActivityIntent.putExtra("card", card);
                 startActivity(cardActivityIntent);
+
 
                 Toast.makeText(GameActivity.this,
                         String.valueOf(ratingBarStar.getRating()),

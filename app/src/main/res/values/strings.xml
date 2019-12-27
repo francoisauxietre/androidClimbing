@@ -39,6 +39,8 @@
     <string name="activity_main_button_home">Home</string>
     <string name="activity_main_button_card">Card</string>
     <string name="test">Test</string>
-<string name="acitvity_main_url">Url</string>
+    <string name="acitvity_main_url">Url</string>
+    <string name="activity_main_button_friends">Friends</string>
+    <string name="activity_main_button_create_card">Create a new Card</string>
 
 </resources>

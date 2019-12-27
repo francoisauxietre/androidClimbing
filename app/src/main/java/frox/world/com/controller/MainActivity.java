@@ -13,48 +13,48 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import frox.world.com.R;
+import frox.world.com.model.User;
+
+import android.app.ProgressDialog;
+
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-
-import frox.world.com.R;
-import frox.world.com.model.User;
 
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView textView;
     private EditText editText;
-    private Button button;
+    private Button createCard;
     private Button home;
     private Button api;
     private Button climber;
     private Button card;
     private Button url;
-    private User user;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        user = new User();
-        //user.setFirstName("toto");
-        textView = findViewById(R.id.activity_main_textview);
+       // textView = findViewById(R.id.activity_main_textview);
         editText = findViewById(R.id.activity_main_hello_input);
-        button = findViewById(R.id.activity_main_button);
+        //desactivation du bouton pour etre sur que l utilisateur rentre son nom avant de faire une carte
+        createCard = findViewById(R.id.activity_main_button_create_card);
+        createCard.setEnabled(false);
         home = findViewById(R.id.activity_main_button_home);
         api = findViewById(R.id.activity_main_button_api);
         climber = findViewById(R.id.activity_main_button_climber);
         card = findViewById(R.id.activity_main_button_Card);
         url = findViewById(R.id.activity_url_button);
 
-        button.setEnabled(false);
 
         editText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
 
-                button.setEnabled(s.toString().length() != 0);
+                createCard.setEnabled(s.toString().length() != 0);
             }
 
             @Override
@@ -75,14 +75,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        button.setOnClickListener(new View.OnClickListener() {
+        createCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Context context = getApplicationContext();
-                CharSequence text = "Hello toast!";
+                CharSequence text = "Hello " + editText.getText() +" !";
                 int duration = Toast.LENGTH_SHORT;
                 Toast.makeText(context, text, duration).show();
                 Intent gameActivityIntent = new Intent(MainActivity.this, GameActivity.class);
+                gameActivityIntent.putExtra("user", editText.getText());
                 startActivity(gameActivityIntent);
             }
         });
@@ -110,87 +111,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        card.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View view) {
-                Intent cardAcitivityIntent =  new Intent(MainActivity.this, CardActivity.class);
-                startActivity(cardAcitivityIntent);
-                AsyncHTTP task = new AsyncHTTP(MainActivity.this);
-                //task.execute("http://spring.auxietre.com/climbers/");
-            }
-        });
-
-//        url.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent urlActivity= new Intent(MainActivity.this, UrlActivity.class);
-//                startActivity(urlActivity);
-//            }
-//        });
-
-    }
-   private class AsyncHTTP extends AsyncTask<String, Integer, String> {
-
-        private AppCompatActivity myActivity;
-
-        public AsyncHTTP(AppCompatActivity mainActivity) {
-            myActivity = mainActivity;
-        }
-
-        @Override
-        protected void onPreExecute() {
-
-        }
-
-        @Override
-        protected String doInBackground(String... strings) {
-            publishProgress(1);
-            try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); }
-
-            URL url = null;
-            HttpURLConnection urlConnection = null;
-            String result = null;
-            try {
-                url = new URL(strings[0]);
-                urlConnection = (HttpURLConnection) url.openConnection(); // Open
-                InputStream in = new BufferedInputStream(urlConnection.getInputStream()); // Stream
-                publishProgress(2);
-                result = readStream(in); // Read stream
-            }
-            catch (MalformedURLException e) { e.printStackTrace(); }
-            catch (IOException e) { e.printStackTrace(); }
-            finally { if (urlConnection != null)
-                urlConnection.disconnect();  }
-
-            publishProgress(4);
-            return result; // returns the result
-        }
-
-        @Override
-        protected void onProgressUpdate(Integer... values) {
-            ProgressBar pb = (ProgressBar) myActivity.findViewById(R.id.progressBar);
-            pb.setProgress(values[0]);
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            TextView text = (TextView) myActivity.findViewById(R.id.text);
-            text.setText(s); // Updates the textview
-            ProgressBar pb = (ProgressBar) myActivity.findViewById(R.id.progressBar);
-            pb.setProgress(5);
-        }
-
-        private String readStream(InputStream is) throws IOException {
-            StringBuilder sb = new StringBuilder();
-            BufferedReader r = new BufferedReader(new InputStreamReader(is),1000);
-            for (String line = r.readLine(); line != null; line =r.readLine()){
-                sb.append(line);
-            }
-            is.close();
-            return sb.toString();
-        }
 
 
     }
+
+
 }

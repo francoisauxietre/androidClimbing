@@ -11,11 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <Button
             android:id="@+id/activity_main_button_climber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/activity_main_button_climber" />
+            android:text="@string/activity_main_button_friends" />
 
         <Button
             android:id="@+id/activity_main_button_api"
@@ -29,6 +30,13 @@
             android:layout_height="wrap_content"
             android:text="@string/activity_main_button_home" />
 
+        <EditText
+            android:id="@+id/activity_main_hello_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="please enter your name to see your friends"
+            android:text="" />
+
         <Button
             android:id="@+id/activity_main_button_Card"
             android:layout_width="wrap_content"
@@ -39,13 +47,13 @@
             android:text="@string/activity_main_button_card" />
 
         <Button
-            android:id="@+id/activity_main_button"
+            android:id="@+id/activity_main_button_create_card"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="147dp"
             android:layout_marginTop="56dp"
             android:layout_marginBottom="30dp"
-            android:text="@string/activity_main_button_climber" />
+            android:text="@string/activity_main_button_create_card" />
 
 
         <Button
@@ -55,27 +63,17 @@
 
         </Button>
 
-        <TextView
-            android:id="@+id/activity_main_textview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="2px"
-            android:paddingStart="2px"
-            android:paddingLeft="2px"
-            android:paddingTop="2px"
-            android:paddingEnd="2px"
-            android:paddingRight="2px"
-            android:paddingBottom="2px"
-            android:text="Hello World!"
-            android:textSize="24sp" />
-
-        <EditText
-            android:id="@+id/activity_main_hello_input"
+        <ImageView
+            android:id="@+id/imageView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="177dp"
-            android:hint="essai"
-            android:text="essai" />
+            app:srcCompat="@drawable/gon" />
+
+
+
+
+
+
     </LinearLayout>
 
 
