@@ -26,9 +26,8 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui:2.0.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
     implementation 'com.android.volley:volley:1.1.1'
-    provided "org.projectlombok:lombok:1.16.2" //or v. 1.16.2 in your case.
-    compileOnly 'org.projectlombok:lombok:1.16.2'
-    annotationProcessor 'org.projectlombok:lombok:1.16.2'
+    compileOnly 'org.projectlombok:lombok:1.18.10'
+    annotationProcessor 'org.projectlombok:lombok:1.18.10'
 
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'

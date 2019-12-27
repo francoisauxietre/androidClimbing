@@ -30,11 +30,11 @@
                     app:srcCompat="@drawable/cuivre" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/activity_card_textview_name"
                     android:layout_width="320dp"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
-                    android:text="TextView" />
+                    android:text="" />
 
                 <ImageView
                     android:id="@+id/activity_card_cuivre1"
