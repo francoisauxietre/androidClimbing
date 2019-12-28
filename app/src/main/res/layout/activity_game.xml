@@ -40,33 +40,7 @@
                 android:src="@drawable/reset" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="left"
-            android:padding="5sp">
 
-            <TextView
-                android:id="@+id/activity_game_button_mental"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:text="@string/activity_game_mental" />
-
-            <RatingBar
-                android:id="@+id/activity_game_ratingbar_mental"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:numStars="5"
-                android:rating="0.0"
-                android:stepSize="1.0" />
-
-            <ImageButton
-                android:id="@+id/activity_game_button_reset_mental"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/reset" />
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -90,6 +64,34 @@
 
             <ImageButton
                 android:id="@+id/activity_game_button_reset_tactical"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/reset" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:orientation="horizontal"
+            android:padding="5sp">
+
+            <TextView
+                android:id="@+id/activity_game_button_mental"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_game_mental" />
+
+            <RatingBar
+                android:id="@+id/activity_game_ratingbar_mental"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="0.0"
+                android:stepSize="1.0" />
+
+            <ImageButton
+                android:id="@+id/activity_game_button_reset_mental"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/reset" />
@@ -122,44 +124,117 @@
                 android:src="@drawable/reset" />
         </LinearLayout>
 
-        <Spinner
-            android:id="@+id/activity_game_spinner_level"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/btn_dropdown"
-            android:spinnerMode="dropdown" />
 
-        <TextView
-            android:id="@+id/activity_game_button_star"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/activity_game_star" />
 
-        <RatingBar
-            android:id="@+id/activity_game_ratingbar_star"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:numStars="5"
-            android:rating="0.0"
-            android:stepSize="1.0" />
+            android:orientation="horizontal"
+            android:padding="5sp">
+
+            <TextView
+                android:id="@+id/activity_game_button_star"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_game_star" />
+
+            <RatingBar
+                android:id="@+id/activity_game_ratingbar_star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="0.0"
+                android:stepSize="1.0" />
+
+            <ImageButton
+                android:id="@+id/activity_game_button_reset_star"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/reset" />
+        </LinearLayout>
 
 
 
 
-        <Button
-            android:id="@+id/activity_main_button_save"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/activity_game_save" />
+
+
+
+        <!-- spinner -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/activity_game_spinner_difficulty"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/btn_dropdown"
+                android:spinnerMode="dropdown" />
+
+            <Spinner
+                android:id="@+id/activity_game_spinner_bonus"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/btn_dropdown"
+                android:spinnerMode="dropdown" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/activity_game_spinner_zone_type"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/btn_dropdown"
+                android:spinnerMode="dropdown" />
+
+            <Spinner
+                android:id="@+id/activity_game_spinner_route_type"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/btn_dropdown"
+                android:spinnerMode="dropdown" />
+
+        </LinearLayout>
+    <EditText
+            android:id="@+id/activity_game_climbingroute_name"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text=""
+            android:hint="@string/activity_game_climbingroute_name"/>
+
+        <EditText
+            android:id="@+id/activity_game_info"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:hint="@string/activity_game_info" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/activity_game_textview_total"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:background="#B91515"
+            android:background="#FFFFFF"
             android:text="@string/acitvity_game_total"
             android:textSize="30sp" />
 
+        <Button
+            android:id="@+id/activity_main_button_save"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_game_save" />
 
     </LinearLayout>
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

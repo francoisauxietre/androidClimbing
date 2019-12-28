@@ -39,6 +39,8 @@ public class Card implements Serializable {
     @ColumnInfo(name = "last_name")
     public String lastName;
 
+    //TODO ajouter rank
+    public String rank;
 
     @ColumnInfo(name = "bonus")
     private String bonus;
@@ -52,8 +54,9 @@ public class Card implements Serializable {
     @ColumnInfo(name = "date")
     private Date date;
 
-    @ColumnInfo(name = "difficuty")
-    private String difficuty;
+    //TODO erreur ici dans le java aussi de zone difficuty
+    @ColumnInfo(name = "difficulty")
+    private String difficulty;
 
     @ColumnInfo(name = "physical")
     private Integer physical;
