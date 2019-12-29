@@ -4,8 +4,6 @@
     <string name="app_name">ClimbingAndroid</string>
     <string name="title_activity_card">CardActivity</string>
 
-<!--    <string name="start">Start</string>-->
-
     <!--    main   -->
     <string name="activity_main_button_api">Api</string>
     <string name="activity_main_button_climber">Climber</string>
@@ -15,6 +13,7 @@
     <string name="activity_main_button_friends">Friends</string>
     <string name="activity_main_button_create_card">Create a new Card</string>
     <string name="activity_main_button_url">Url</string>
+    <string name="activity_main_button_user_profile">User Profile</string>
 
     <!--    Home   -->
     <string name="activity_home_button_start">Start</string>
@@ -32,19 +31,14 @@
     <string name="activity_game_climbingroute_name">climbing route name:</string>
     <string name="activity_game_saving">Saving your new difficulty card</string>
 
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
-
-
+    <!--    api    -->
     <string name="acivity_api_checkbox1"></string>
     <string name="textview">TextView</string>
     <string name="checkbox0">Image</string>
     <string name="checkbox1">Bonus</string>
     <string name="checkbox2">Infos</string>
 
-    <!--url-->
+    <!--    url    -->
     <string name="activity_url_button_test">Test</string>
 
     <!--    card   -->
@@ -92,12 +86,27 @@
     <string name="acitvity_card_physical_progress3"></string>
     <string name="acitvity_card_physical_progress4"></string>
     <string name="acitvity_card_physical_progress5"></string>
-
     <!--    cartography   -->
     <string name="activity_cartography_text_view_latitude">latitude</string>
     <string name="activity_cartography_text_view_longitude">longitude</string>
     <string name="activity_cartography_text_view_adress">adress</string>
+    <string name="activity_cartography_enable_gps">please enable gps to find your location</string>
+
+    <!--    photo -->
+    <string name="activity_photo_button_save">Save</string>
     <string name="fr">us</string>
+
+    <!--    recycler_user-->
+    <string name="activity_recycler_user_button_new_user">Add</string>
+
+
+    <!--    user-->
+    <string name="activity_user_first_name">Firstname</string>
+    <string name="activity_user_last_name">Lastname</string>
+    <string name="activity_user_birdthday">Lastname</string>
+    <string name="activity_user_email">Lastname</string>
+    <string name="activity_user_password">Lastname</string>
+    <string name="activity_user_postal_adress">Lastname</string>
 
     <string-array name="bonus_array">
         <item>JUMP</item>

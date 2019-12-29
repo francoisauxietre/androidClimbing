@@ -1,4 +1,4 @@
-package frox.world.com.controller;
+package frox.world.com.controller.climber;
 
 import androidx.appcompat.app.AppCompatActivity;
 

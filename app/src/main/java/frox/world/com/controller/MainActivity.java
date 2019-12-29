@@ -5,30 +5,20 @@ import androidx.room.TypeConverter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import frox.world.com.R;
-import frox.world.com.database.AppDatabase;
-import frox.world.com.model.User;
+import frox.world.com.controller.cartography.CartographyActivity;
+import frox.world.com.controller.climber.ClimberActivity;
+import frox.world.com.controller.user.UserActivity;
+import frox.world.com.room.AppDatabase;
 
-import android.app.ProgressDialog;
-
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.Date;
 
 
@@ -44,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     private Button card;
     private Button url;
     private Button cartography;
+    private Button userProfile;
+
     private String user;
 
     private AppDatabase db;
@@ -73,6 +65,16 @@ public class MainActivity extends AppCompatActivity {
         //card = findViewById(R.id.activity_main_button_card);
         url = findViewById(R.id.activity_main_button_url);
         cartography = findViewById(R.id.mapview);
+
+        userProfile = findViewById(R.id.activity_main_button_user_profile);
+        userProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent userProfileIntent = new Intent(MainActivity.this, UserActivity.class);
+                startActivity(userProfileIntent);
+            }
+        });
+
 
 
         firstName.addTextChangedListener(new TextWatcher() {

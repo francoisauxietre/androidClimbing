@@ -235,6 +235,11 @@
             android:text="@string/activity_game_save" />
 
     </LinearLayout>
+        <ImageButton
+            android:id="@+id/activity_game_button_picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/icone_camera" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

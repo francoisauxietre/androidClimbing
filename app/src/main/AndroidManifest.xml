@@ -3,11 +3,10 @@
     package="frox.world.com">
     <!-- To access Google+ APIs: -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- acces a une carte de stockage -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- to access gps -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
 
     <application
         android:allowBackup="true"
@@ -17,13 +16,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".controller.CartographyActivity"></activity>
-        <activity android:name=".controller.RecyclerCardActivity" />
+        <activity android:name=".controller.user.UserActivity"></activity>
+        <activity android:name=".controller.recycler.RecyclerUserActivity" />
+        <activity android:name=".controller.PhotoActivity" />
+        <activity android:name=".controller.cartography.CartographyActivity" />
+        <activity android:name=".controller.recycler.RecyclerCardActivity" />
         <activity android:name=".controller.UrlActivity" />
-        <activity android:name=".controller.ClimberActivity" />
+        <activity android:name=".controller.climber.ClimberActivity" />
         <activity android:name=".controller.ApiActivity" />
         <activity
-            android:name=".controller.CardActivity"
+            android:name=".controller.card.CardActivity"
             android:label="@string/title_activity_card"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".controller.HomeActivity" />

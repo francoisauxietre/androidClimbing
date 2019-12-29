@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".controller.CartographyActivity">
+    tools:context=".controller.cartography.CartographyActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -17,22 +18,23 @@
 
         <TextView
             android:id="@+id/activity_cartography_latitude"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/activity_cartography_text_view_latitude" />
 
         <TextView
             android:id="@+id/activity_cartography_longitude"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/activity_cartography_text_view_longitude" />
 
         <TextView
             android:id="@+id/activity_cartography_adress"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/activity_cartography_text_view_adress" />
+
 
         <org.osmdroid.views.MapView
             android:id="@+id/mapview"
@@ -42,4 +44,17 @@
         </org.osmdroid.views.MapView>
 
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/activity_cartography_locate"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="#ffffff"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/locate">
+
+    </ImageButton>
 </androidx.constraintlayout.widget.ConstraintLayout>

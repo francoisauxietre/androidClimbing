@@ -1,4 +1,4 @@
-package frox.world.com.controller;
+package frox.world.com.controller.card;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;

@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -18,11 +17,11 @@ import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import java.sql.Time;
 import java.util.Calendar;
 import java.util.Random;
 
 import frox.world.com.R;
+import frox.world.com.controller.card.CardActivity;
 import frox.world.com.model.Card;
 
 public class GameActivity extends AppCompatActivity implements View.OnClickListener {
@@ -49,6 +48,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     private ImageButton buttonReset1;
     private ImageButton buttonReset2;
     private ImageButton buttonReset3;
+    private ImageButton  picture;
     private String user;
     private String[] climbingrouteArray;
     private String[] bonusArray;
@@ -72,6 +72,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
         intentGame = getIntent();
         user = intentGame.getStringExtra("user");
 
@@ -89,6 +90,15 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
         info = findViewById(R.id.activity_game_info);
         climbingroute = findViewById(R.id.activity_game_climbingroute_name);
+
+        picture = findViewById(R.id.activity_game_button_picture);
+        picture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent pictureIntent = new Intent(GameActivity.this, PhotoActivity.class);
+                startActivity(pictureIntent);
+            }
+        });
 
         addListenerOnRatingBar();
         addListenerOnButton();
@@ -305,7 +315,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         });
 
 
-        //if click on me, then display the current rating value.
+        //message a l ecran pour verifier les valeur passer avec putextra a l'intent suivant
         buttonSave.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -315,6 +325,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             }
 
         });
+
+
 
     }
 
