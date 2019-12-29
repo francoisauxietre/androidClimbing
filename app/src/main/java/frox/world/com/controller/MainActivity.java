@@ -34,16 +34,22 @@ import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView textView;
-    private EditText editText;
+    private EditText firstName;
+    private EditText lastName;
+
     private Button createCard;
     private Button home;
     private Button api;
     private Button climber;
     private Button card;
     private Button url;
+    private Button cartography;
     private String user;
+
     private AppDatabase db;
+
+    private boolean firstNameActive;
+    private boolean lastNameActive;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,30 +58,34 @@ public class MainActivity extends AppCompatActivity {
 
         db = Room.databaseBuilder(getApplicationContext(),
                 AppDatabase.class, "database-name").build();
+        //demande a l'utilisateur son nom et prenom
+        firstName = findViewById(R.id.activity_main_edit_text_first_name);
+        lastName = findViewById(R.id.activity_main_edit_text_last_name);
 
-       // textView = findViewById(R.id.activity_main_textview);
-        editText = findViewById(R.id.activity_main_hello_input);
         //desactivation du bouton pour etre sur que l utilisateur rentre son nom avant de faire une carte
         createCard = findViewById(R.id.activity_main_button_create_card);
         createCard.setEnabled(false);
+
         home = findViewById(R.id.activity_main_button_home);
         api = findViewById(R.id.activity_main_button_api);
+
         climber = findViewById(R.id.activity_main_button_climber);
-        card = findViewById(R.id.activity_main_button_Card);
-        url = findViewById(R.id.activity_url_button);
+        //card = findViewById(R.id.activity_main_button_card);
+        url = findViewById(R.id.activity_main_button_url);
+        cartography = findViewById(R.id.mapview);
 
 
-        editText.addTextChangedListener(new TextWatcher() {
+        firstName.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-
-                createCard.setEnabled(s.toString().length() != 0);
+                firstNameActive = true;
+                if (firstNameActive && lastNameActive){
+                    createCard.setEnabled(s.toString().length() != 0);
+                }
             }
 
             @Override
@@ -84,15 +94,38 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        lastName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                lastNameActive = true;
+                if (firstNameActive && lastNameActive){
+                    createCard.setEnabled(s.toString().length() != 0);
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+
+
         createCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Context context = getApplicationContext();
-                CharSequence text = "Hello " + editText.getText() +" !";
+                CharSequence text = "Hello " + firstName.getText() +" !";
                 int duration = Toast.LENGTH_SHORT;
                 Toast.makeText(context, text, duration).show();
                 Intent gameActivityIntent = new Intent(MainActivity.this, GameActivity.class);
-                user = editText.getText().toString();
+                user = firstName.getText().toString() + " " + lastName.getText().toString();
                 gameActivityIntent.putExtra("user",user);
                 startActivity(gameActivityIntent);
             }
@@ -118,6 +151,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent climberActivity= new Intent(MainActivity.this, ClimberActivity.class);
                 startActivity(climberActivity);
+            }
+        });
+
+        cartography.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent cardActivity= new Intent(MainActivity.this, CartographyActivity.class);
+                startActivity(cardActivity);
             }
         });
 

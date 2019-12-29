@@ -32,7 +32,7 @@ public class UrlActivity extends AppCompatActivity {
         setContentView(R.layout.activity_url);
 
         textView = findViewById(R.id.activity_url_textview);
-        button = findViewById(R.id.activity_url_button);
+        button = findViewById(R.id.activity_main_button_url);
 
         queue = Volley.newRequestQueue(this);
 
@@ -46,7 +46,7 @@ public class UrlActivity extends AppCompatActivity {
 
     private void jsonParse() {
 
-        String url = "https://api.myjson.com/bins/kp9wz";
+        String url = "http://spring.auxietre.com/climbers/";
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -57,9 +57,9 @@ public class UrlActivity extends AppCompatActivity {
                             JSONArray jsonArray = response.getJSONArray("employees");
 
                             for(int i =0; i<jsonArray.length(); i++){
-//                                JSONObject climber = jsonArray.getJSONObject(i);
-//                                String firstName = climber.getString("firstName");
-////                                String language = climber.getString("language");
+                                JSONObject climber = jsonArray.getJSONObject(i);
+                                String firstName = climber.getString("firstName");
+//                                String language = climber.getString("language");
                                 textView.append(" " +"\n\n");
 
                             }

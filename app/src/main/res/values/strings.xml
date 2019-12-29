@@ -1,10 +1,26 @@
 <resources>
-    <string name="app_name">ClimbingAndroid</string>
-    <string name="textviewHome">TextViewHome</string>
-    <string name="start">Start</string>
-    <string name="buttonAccueil">Accueil</string>
-    <string name="home">Home</string>
 
+    <!-- Manifest.xml   -->
+    <string name="app_name">ClimbingAndroid</string>
+    <string name="title_activity_card">CardActivity</string>
+
+<!--    <string name="start">Start</string>-->
+
+    <!--    main   -->
+    <string name="activity_main_button_api">Api</string>
+    <string name="activity_main_button_climber">Climber</string>
+    <string name="activity_main_button_home">Home</string>
+    <string name="activity_main_button_card">Card</string>
+    <string name="activity_main_button_cartography">Maps</string>
+    <string name="activity_main_button_friends">Friends</string>
+    <string name="activity_main_button_create_card">Create a new Card</string>
+    <string name="activity_main_button_url">Url</string>
+
+    <!--    Home   -->
+    <string name="activity_home_button_start">Start</string>
+    <string name="activity_home_button_home">Home</string>
+
+    <!--    game   -->
     <string name="activity_game_technical">Technical</string>
     <string name="activity_game_tactical">Tactical</string>
     <string name="activity_game_mental">Mental</string>
@@ -16,8 +32,6 @@
     <string name="activity_game_climbingroute_name">climbing route name:</string>
     <string name="activity_game_saving">Saving your new difficulty card</string>
 
-    <string name="title_activity_card">CardActivity</string>
-    <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="tab_text_1">Tab 1</string>
@@ -30,15 +44,10 @@
     <string name="checkbox1">Bonus</string>
     <string name="checkbox2">Infos</string>
 
-    <string name="activity_main_button_api">Api</string>
-    <string name="activity_main_button_climber">Climber</string>
-    <string name="activity_main_button_home">Home</string>
-    <string name="activity_main_button_card">Card</string>
-    <string name="test">Test</string>
-    <string name="acitvity_main_url">Url</string>
-    <string name="activity_main_button_friends">Friends</string>
-    <string name="activity_main_button_create_card">Create a new Card</string>
+    <!--url-->
+    <string name="activity_url_button_test">Test</string>
 
+    <!--    card   -->
     <string name="activity_card_textview_level">Level</string>
     <string name="activity_card_bottom_left_corner">Corner</string>
     <string name="activity_card_android"></string>
@@ -84,6 +93,10 @@
     <string name="acitvity_card_physical_progress4"></string>
     <string name="acitvity_card_physical_progress5"></string>
 
+    <!--    cartography   -->
+    <string name="activity_cartography_text_view_latitude">latitude</string>
+    <string name="activity_cartography_text_view_longitude">longitude</string>
+    <string name="activity_cartography_text_view_adress">adress</string>
     <string name="fr">us</string>
 
     <string-array name="bonus_array">

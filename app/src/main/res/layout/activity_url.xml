@@ -15,9 +15,9 @@
     </TextView>
 
     <Button
-        android:id="@+id/activity_url_button"
+        android:id="@+id/activity_url_button_test"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/test"></Button>
+        android:text="@string/activity_url_button_test"></Button>
 
 </RelativeLayout>

@@ -30,49 +30,55 @@
             android:layout_height="wrap_content"
             android:text="@string/activity_main_button_home" />
 
-        <EditText
-            android:id="@+id/activity_main_hello_input"
+        <Button
+            android:id="@+id/activity_main_button_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="please enter your name to see your friends"
-            android:text="" />
-
-        <Button
-            android:id="@+id/activity_main_button_Card"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="147dp"
-            android:layout_marginTop="56dp"
-            android:layout_marginBottom="30dp"
             android:text="@string/activity_main_button_card" />
 
         <Button
-            android:id="@+id/activity_main_button_create_card"
-            android:layout_width="wrap_content"
+            android:id="@+id/mapview"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="147dp"
-            android:layout_marginTop="56dp"
-            android:layout_marginBottom="30dp"
-            android:text="@string/activity_main_button_create_card" />
-
-
+            android:text="@string/activity_main_button_cartography"/>
+        
         <Button
+            android:id="@+id/activity_main_button_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/activity_main_button_url"/>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/acitvity_main_url">
+            android:orientation="horizontal">
 
-        </Button>
+            <EditText
+                android:id="@+id/activity_main_edit_text_first_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="FirstName"
+                android:text="" />
+
+            <EditText
+                android:id="@+id/activity_main_edit_text_last_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="LastName"
+                android:text="" />
+
+            <Button
+                android:id="@+id/activity_main_button_create_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_main_button_create_card" />
+        </LinearLayout>
 
         <ImageView
             android:id="@+id/imageView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/gon" />
-
-
-
-
-
 
     </LinearLayout>
 
