@@ -16,6 +16,7 @@ import android.widget.Toast;
 import frox.world.com.R;
 import frox.world.com.controller.cartography.CartographyActivity;
 import frox.world.com.controller.climber.ClimberActivity;
+import frox.world.com.room.recyclerView.RecyclerUserActivity;
 import frox.world.com.controller.user.UserActivity;
 import frox.world.com.room.AppDatabase;
 
@@ -35,8 +36,9 @@ public class MainActivity extends AppCompatActivity {
     private Button url;
     private Button cartography;
     private Button userProfile;
+    private String userName;
 
-    private String user;
+    private Button recyclerUser;
 
     private AppDatabase db;
 
@@ -71,9 +73,26 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent userProfileIntent = new Intent(MainActivity.this, UserActivity.class);
+                userProfileIntent.putExtra("firstName", firstName.getText());
+                userProfileIntent.putExtra("lastName", lastName.getText());
+
                 startActivity(userProfileIntent);
+
             }
         });
+//        recyclerUser = findViewById(R.id.activity_main_button_recycler);
+//        recyclerUser.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent userIntent = new Intent(MainActivity.this, RecyclerUserActivity.class);
+//                userIntent.putExtra("firstName", firstName.getText());
+//                userIntent.putExtra("lastName", lastName.getText());
+//                startActivity(userIntent);
+//
+//            }
+//        });
+
+
 
 
 
@@ -127,8 +146,8 @@ public class MainActivity extends AppCompatActivity {
                 int duration = Toast.LENGTH_SHORT;
                 Toast.makeText(context, text, duration).show();
                 Intent gameActivityIntent = new Intent(MainActivity.this, GameActivity.class);
-                user = firstName.getText().toString() + " " + lastName.getText().toString();
-                gameActivityIntent.putExtra("user",user);
+                userName = firstName.getText().toString() + " " + lastName.getText().toString();
+                gameActivityIntent.putExtra("user",userName);
                 startActivity(gameActivityIntent);
             }
         });

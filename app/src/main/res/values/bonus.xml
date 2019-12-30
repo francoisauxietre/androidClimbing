@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bonus_array">
+        <item>JUMP</item>
+        <item>"SLOPE</item>
+        <item> DYNAMIC</item>
+        <item> CRUX</item>
+        <item> CROSS_HAND</item>
+        <item> FEET</item>
+        <item> HAND</item>
+        <item> ROOF</item>
+        <item> WALL</item>
+        <item> BI</item>
+        <item> TRI</item>
+        <item> MONO</item>
+        <item> PINCH</item>
+        <item> DIHEDRAL</item>
+        <item> LOW_ANGLE_SLAB</item>
+        <item> OVERHANG</item>
+        <item> SLAB</item>
+        <item> STEEP_WALL</item>
+        <item> BUMP</item>
+        <item> NO_FOOT</item>
+        <item> CORE_STRENCH</item>
+        <item> DANGEROUS</item>
+        <item> DYNO</item>
+        <item> FOOT_WORK</item>
+        <item> FRICTION</item>
+        <item> HEEL_HOOK</item>
+        <item> REACHY</item>
+        <item> SQUEEZE</item>
+    </string-array>
+</resources>

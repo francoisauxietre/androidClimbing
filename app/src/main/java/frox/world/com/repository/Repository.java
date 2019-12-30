@@ -19,7 +19,7 @@ public class Repository {
     public Repository(Application application) {
         AppDatabase database = AppDatabase.getInstance(application);
         userDAO = database.userDAO();
-        allUsers = userDAO.getAll();
+        //allUsers = userDAO.get();
     }
 
     public void insert(User user) {

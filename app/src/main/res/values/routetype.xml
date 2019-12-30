@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="route_type_array">
+        <item>BOULDER</item>
+        <item>ROUTE</item>
+    </string-array>
+</resources>

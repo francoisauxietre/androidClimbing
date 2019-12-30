@@ -2,19 +2,25 @@ package frox.world.com.model;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 import java.io.Serializable;
 import java.util.Date;
 
 
 import lombok.Data;
-
-@Entity
+@Entity(foreignKeys = @ForeignKey(entity = User.class,
+        parentColumns = "id",
+        childColumns = "userId"))
 @Data
 public class Card implements Serializable {
 
-    @PrimaryKey
-    public int uid;
+    //constructeur vide
+    public Card() { }
+
+    //creation d'un identifiant unique pour chaque carte
+    @PrimaryKey(autoGenerate = true)
+    private long id;
 
     @ColumnInfo(name = "first_name")
     public String firstName;

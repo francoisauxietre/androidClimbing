@@ -1,4 +1,4 @@
-package frox.world.com.controller.recycler;
+package frox.world.com.room.recyclerView;
 
 import androidx.appcompat.app.AppCompatActivity;
 

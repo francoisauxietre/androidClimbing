@@ -17,10 +17,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".controller.user.UserActivity"></activity>
-        <activity android:name=".controller.recycler.RecyclerUserActivity" />
+        <activity android:name=".room.recyclerView.RecyclerUserActivity" />
         <activity android:name=".controller.PhotoActivity" />
         <activity android:name=".controller.cartography.CartographyActivity" />
-        <activity android:name=".controller.recycler.RecyclerCardActivity" />
+        <activity android:name=".room.recyclerView.RecyclerCardActivity" />
         <activity android:name=".controller.UrlActivity" />
         <activity android:name=".controller.climber.ClimberActivity" />
         <activity android:name=".controller.ApiActivity" />

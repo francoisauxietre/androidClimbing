@@ -1,4 +1,4 @@
-package frox.world.com.controller.recycler;
+package frox.world.com.room.recyclerView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import frox.world.com.R;
+import frox.world.com.room.ViewModel;
 import frox.world.com.room.AppDatabase;
 import frox.world.com.model.User;
 
@@ -37,17 +38,8 @@ public class RecyclerUserActivity extends AppCompatActivity implements View.OnCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_user);
 
-        usersList = new ArrayList<User>();
-        recyclerAdapter = new RecyclerAdapter(usersList);
-        viewModel = ViewModelProviders.of(this).get(ViewModel.class);
+        usersList = new ArrayList<>();
 
-        viewModel.getAllUsers().observe(this, new Observer<List<User>>() {
-            @Override
-            public void onChanged(List<User> users) {
-
-                recyclerAdapter.setUsersList(users);
-            }
-        });
 
         User fa = new User();
         fa.setFirst_name("fa");
@@ -56,6 +48,59 @@ public class RecyclerUserActivity extends AppCompatActivity implements View.OnCl
         fa.setDepartment("35");
         fa.setTown("rennes");
         this.usersList.add(fa);
+
+        User fa1 = new User();
+        fa.setFirst_name("fa");
+        fa.setLast_name("ox");
+        fa.setBirth("18/09/1972");
+        fa.setDepartment("35");
+        fa.setTown("rennes");
+        this.usersList.add(fa);
+
+        User fa2 = new User();
+        fa.setFirst_name("fa");
+        fa.setLast_name("ox");
+        fa.setBirth("18/09/1972");
+        fa.setDepartment("35");
+        fa.setTown("rennes");
+        this.usersList.add(fa2);
+        User fa3 = new User();
+        fa.setFirst_name("fa");
+        fa.setLast_name("ox");
+        fa.setBirth("18/09/1972");
+        fa.setDepartment("35");
+        fa.setTown("rennes");
+        this.usersList.add(fa3);
+        User fa4 = new User();
+        fa.setFirst_name("fa");
+        fa.setLast_name("ox");
+        fa.setBirth("18/09/1972");
+        fa.setDepartment("35");
+        fa.setTown("rennes");
+        this.usersList.add(fa4);
+        User fa5 = new User();
+        fa.setFirst_name("fa");
+        fa.setLast_name("ox");
+        fa.setBirth("18/09/1972");
+        fa.setDepartment("35");
+        fa.setTown("rennes");
+        this.usersList.add(fa5);
+        this.usersList.add(fa5);
+        this.usersList.add(fa5);
+        this.usersList.add(fa5);
+        this.usersList.add(fa5);
+        this.usersList.add(fa5);
+
+        viewModel = ViewModelProviders.of(this).get(ViewModel.class);
+        recyclerAdapter = new RecyclerAdapter(usersList);
+        Log.i("USERLIST ", ""+usersList.size());
+        viewModel.getAllUsers().observe(this, new Observer<List<User>>() {
+            @Override
+            public void onChanged(List<User> users) {
+
+                recyclerAdapter.setUsersList(users);
+            }
+        });
 
         userDatabase = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, DATABASE_NAME)
                 .fallbackToDestructiveMigration()
@@ -66,7 +111,7 @@ public class RecyclerUserActivity extends AppCompatActivity implements View.OnCl
 
         // handle the recycler view
         recyclerView = findViewById(R.id.activity_recycler_user_recycler_view);
-        recyclerAdapter = new RecyclerAdapter(this.usersList);
+        //recyclerAdapter = new RecyclerAdapter(this.usersList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setAdapter(recyclerAdapter);

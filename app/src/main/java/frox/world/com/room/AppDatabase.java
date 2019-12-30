@@ -66,9 +66,25 @@ public abstract class AppDatabase  extends RoomDatabase {
         protected Void doInBackground(Void... voids) {
 
 
+            User fa0 = new User();
+            fa0.setBirth("12/12/1972");
+            addUser(instance, fa0);
+
             User fa = new User();
             fa.setBirth("12/12/1972");
             addUser(instance, fa);
+
+            User fa1 = new User();
+            fa1.setBirth("12/12/1972");
+            addUser(instance, fa1);
+
+            User fa2 = new User();
+            fa2.setBirth("12/12/1972");
+            addUser(instance, fa2);
+
+            User fa3 = new User();
+            fa3.setBirth("12/12/1972");
+            addUser(instance, fa3);
 
 //            userDao.insert(fa);
 //            userDao.insert(fa1);

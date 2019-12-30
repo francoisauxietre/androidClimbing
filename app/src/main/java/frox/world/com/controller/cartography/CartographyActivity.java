@@ -64,7 +64,7 @@ public class CartographyActivity extends AppCompatActivity {
     private String bestProvider;
     private TextView latitude;
     private TextView longitude;
-    private TextView adress;
+    private TextView address;
     private ImageButton locate;
     private ArrayList<GeoPoint> path;
     private double zoom = 5.0;
@@ -84,6 +84,9 @@ public class CartographyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cartography);
 
+        latitude = findViewById(R.id.activity_cartography_latitude);
+        longitude = findViewById(R.id.activity_cartography_longitude);
+        address = findViewById(R.id.activity_cartography_adress);
         //test
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
         fusedLocationClient.getLastLocation()
@@ -92,7 +95,9 @@ public class CartographyActivity extends AppCompatActivity {
                     public void onSuccess(Location location) {
                         Log.d("GPS", "fused!");
                         if (location != null) {
-                            Log.d("GPS", location.getProvider().toString());
+                            latitude.setText("latitude :"+location.getLatitude());
+                            longitude.setText("longitude :"+location.getLongitude());
+                            address.setText("altitude :"+location.getAltitude());
                         }
                     }
                 });
@@ -164,9 +169,7 @@ public class CartographyActivity extends AppCompatActivity {
                 String strLongitude = String.format("Longitude : %f", localisation.getLongitude());
 
                 Log.w("______________entre_______", "test");
-                latitude = findViewById(R.id.activity_cartography_latitude);
-                longitude = findViewById(R.id.activity_cartography_longitude);
-                adress = findViewById(R.id.activity_cartography_adress);
+
 
                 latitude.setText("test");
                 longitude.setText(strLongitude);
@@ -240,7 +243,7 @@ public class CartographyActivity extends AppCompatActivity {
                         addressFragments.add(adresse.getAddressLine(i));
                     }
                     Log.d("GPS", TextUtils.join(System.getProperty("line.separator"), addressFragments));
-                    adress.setText(TextUtils.join(System.getProperty("line.separator"), addressFragments));
+                    address.setText(TextUtils.join(System.getProperty("line.separator"), addressFragments));
                 }
             }
         }

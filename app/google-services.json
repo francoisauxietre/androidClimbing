@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "916174784426",
+    "firebase_url": "https://climbingandroid.firebaseio.com",
+    "project_id": "climbingandroid",
+    "storage_bucket": "climbingandroid.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916174784426:android:896946c6cd9d6415574dd3",
+        "android_client_info": {
+          "package_name": "frox.world.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "916174784426-vkoaeeaknfio7iop5dcgomn23f10clsp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMYgUNgWPPWS8my3_efU5mn75GCzHCLLA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "916174784426-vkoaeeaknfio7iop5dcgomn23f10clsp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
