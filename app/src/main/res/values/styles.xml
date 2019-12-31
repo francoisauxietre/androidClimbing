@@ -20,4 +20,8 @@
 
     <style name="list_separateur"></style>
 
+    <style name="GreenText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#00FF00</item>
+    </style>
+
 </resources>

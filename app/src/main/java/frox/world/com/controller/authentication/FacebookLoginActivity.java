@@ -1,4 +1,9 @@
-//package frox.world.com.controller.authentication;
+package frox.world.com.controller.authentication;
+
+import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 //
 //import androidx.appcompat.app.AppCompatActivity;
 //
@@ -47,7 +52,18 @@
 ///**
 // * Demonstrate Firebase Authentication using a Facebook access token.
 // */
-//public class FacebookLoginActivity extends AppCompatActivity implements View.OnClickListener {
+public class FacebookLoginActivity extends AppCompatActivity implements View.OnClickListener {
+    @Override
+    public void onClick(View v) {
+
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
+    }
+}
+
 //
 //    private static final String TAG = "FacebookLogin";
 //

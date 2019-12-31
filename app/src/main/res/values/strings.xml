@@ -10,10 +10,25 @@
     <string name="activity_new_climber_card_id">card_id</string>
     <string name="activity_new_climber_button_add">Add</string>
     <string name="activity_new_climber_button_back">Back</string>
+    <string name="activity_new_climber_button_add_photo">Add photo</string>
+    <string name="activity_new_climber_edit_text_enter_file_name">Enter file name</string>
+    <string name="activity_new_climber_button_upload">Upload</string>
 
     <!--    new climber menu-->
-<string name="activity_climber_list_new_climber_menu">New climber</string>
-   <string name="activity_climber_list_new_climber_title">Add new climber</string>
+    <string name="activity_climber_list_new_climber_menu">New climber</string>
+    <string name="activity_climber_list_new_climber_title">Add new climber</string>
+
+    <!--    activity climber details-->
+    <string name="activity_climber_detail_last_name">last name</string>
+    <string name="activity_climber_detail_first_name">first name</string>
+    <string name="activity_climber_detail_date">date</string>
+    <string name="activity_climber_detail_card_id">card_id</string>
+    <string name="activity_climber_detail_button_add">Add</string>
+    <string name="activity_climber_detail_button_back">Back</string>
+    <string name="activity_climber_detail_button_update">Update</string>
+    <string name="activity_climber_detail_button_delete">Delete</string>
+
+
     <!--    user-->
     <string name="activity_user_time">Time</string>
     <string name="a1">1</string>

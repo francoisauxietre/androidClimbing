@@ -21,7 +21,7 @@ public class FirebaseDatabaseHelper {
 
    public interface DataStatus{
        void DataIsLoaded(List<Climber> climberList, List<String> keysList);
-       void DataIsInseted();
+       void DataIsInserted();
        void DataIsUpdated();
        void DataIsDeleted();
    }
@@ -58,9 +58,29 @@ public class FirebaseDatabaseHelper {
                .addOnSuccessListener(new OnSuccessListener<Void>() {
                    @Override
                    public void onSuccess(Void aVoid) {
-                       dataStatus.DataIsInseted();
+                       dataStatus.DataIsInserted();
                    }
                });
 
     }
+    public void deleteClimber(String key, final DataStatus dataStatus){
+        databaseReference.child(key).setValue(null)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        dataStatus.DataIsDeleted();
+                    }
+                });
+
+    }
+    public void updateClimber(String key, Climber climber, final DataStatus dataStatus){
+        databaseReference.child(key).setValue(climber)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        dataStatus.DataIsUpdated();
+                    }
+                });
+    }
+
 }

@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -24,7 +25,7 @@ public class FirebaseActivity extends AppCompatActivity {
 
 
     @Override
-    protected ebase  onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.firebase_climber);
         recyclerView = findViewById(R.id.firebase_climber_recycler_view);
@@ -36,7 +37,7 @@ public class FirebaseActivity extends AppCompatActivity {
             }
 
             @Override
-            public void DataIsInseted() {
+            public void DataIsInserted() {
 
             }
 
@@ -51,8 +52,6 @@ public class FirebaseActivity extends AppCompatActivity {
             }
         });
 
-
-        //myRef.setValue("Hello, World!");
         Toast.makeText(FirebaseActivity.this, "connect successful to firebase database", Toast.LENGTH_LONG).show();
 
 

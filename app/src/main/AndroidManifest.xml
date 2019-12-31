@@ -15,8 +15,9 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".firebase.NewClimberActivity"></activity>
+        android:theme="@style/Theme.AppCompat">
+        <activity android:name=".firebase.ClimberDetailsActivity"></activity>
+        <activity android:name=".firebase.NewClimberActivity" />
         <activity android:name=".firebase.FirebaseActivity" />
         <activity android:name=".controller.authentication.FacebookLoginActivity" />
         <activity android:name=".controller.user.UserActivity" />
