@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "916174784426-s0jshoao0fekpl7o66qefuaidgohmjv7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "frox.world.com",
+            "certificate_hash": "813e3daf515e8d4a4e81dd315046eef55d63a50b"
+          }
+        },
+        {
           "client_id": "916174784426-vkoaeeaknfio7iop5dcgomn23f10clsp.apps.googleusercontent.com",
           "client_type": 3
         }

@@ -4,6 +4,8 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import com.google.firebase.database.annotations.NotNull;
+
 import java.io.Serializable;
 
 import lombok.Data;
@@ -18,13 +20,15 @@ public class User implements Serializable {
     public User() { }
 
     @PrimaryKey
+    @NotNull
+    @ColumnInfo(name = "id")
     private long id;
-
-    @ColumnInfo(name = "last_name")
-    private String last_name;
 
     @ColumnInfo(name = "first_name")
     private String first_name;
+
+    @ColumnInfo(name = "last_name")
+    private String last_name;
 
     @ColumnInfo(name = "birth")
     private String birth;

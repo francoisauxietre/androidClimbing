@@ -4,6 +4,9 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
+
+import com.google.firebase.database.annotations.NotNull;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -19,6 +22,7 @@ public class Card implements Serializable {
     public Card() { }
 
     //creation d'un identifiant unique pour chaque carte
+    @NotNull
     @PrimaryKey(autoGenerate = true)
     private long id;
 

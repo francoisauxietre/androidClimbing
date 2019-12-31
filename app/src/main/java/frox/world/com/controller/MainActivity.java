@@ -16,6 +16,7 @@ import android.widget.Toast;
 import frox.world.com.R;
 import frox.world.com.controller.cartography.CartographyActivity;
 import frox.world.com.controller.climber.ClimberActivity;
+import frox.world.com.firebase.FirebaseActivity;
 import frox.world.com.room.recyclerView.RecyclerUserActivity;
 import frox.world.com.controller.user.UserActivity;
 import frox.world.com.room.AppDatabase;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText firstName;
     private EditText lastName;
+    private Button firebase;
 
     private Button createCard;
     private Button home;
@@ -52,6 +54,15 @@ public class MainActivity extends AppCompatActivity {
 
         db = Room.databaseBuilder(getApplicationContext(),
                 AppDatabase.class, "database-name").build();
+
+        firebase = findViewById(R.id.activity_main_button_firebase);
+        firebase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent firebaseIntent = new Intent(MainActivity.this, FirebaseActivity.class);
+                startActivity(firebaseIntent);
+            }
+        });
         //demande a l'utilisateur son nom et prenom
         firstName = findViewById(R.id.activity_main_edit_text_first_name);
         lastName = findViewById(R.id.activity_main_edit_text_last_name);
