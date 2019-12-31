@@ -22,11 +22,11 @@ public class Climber {
     //constructeur vide
     public Climber() { }
 
-    public Climber(String last_name, String first_name, String date, int card_id) {
+    public Climber(String last_name, String first_name, String category, String date) {
         this.last_name = last_name;
         this.first_name = first_name;
+        this.category = category;
         this.date = date;
-        this.card_id = card_id;
     }
 
     //creation d'un numero unique de grimpeur par room
@@ -40,9 +40,13 @@ public class Climber {
     @ColumnInfo(name = "first_name")
     private String first_name;
 
+    @ColumnInfo(name = "category")
+    private String category;
+
+
     private String date;
 
-    private int card_id;
+    private String card_id;
 
 //
 //    User user;

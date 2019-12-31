@@ -2,6 +2,7 @@ package frox.world.com.firebase;
 
 import androidx.annotation.NonNull;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -49,5 +50,17 @@ public class FirebaseDatabaseHelper {
 
             }
         });
+    }
+    public void addClimber(Climber  climber, final DataStatus dataStatus){
+
+       String key = databaseReference.push().getKey();
+       databaseReference.child(key).setValue(climber)
+               .addOnSuccessListener(new OnSuccessListener<Void>() {
+                   @Override
+                   public void onSuccess(Void aVoid) {
+                       dataStatus.DataIsInseted();
+                   }
+               });
+
     }
 }

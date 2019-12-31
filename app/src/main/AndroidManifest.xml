@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".firebase.FirebaseActivity"></activity>
+        <activity android:name=".firebase.NewClimberActivity"></activity>
+        <activity android:name=".firebase.FirebaseActivity" />
         <activity android:name=".controller.authentication.FacebookLoginActivity" />
         <activity android:name=".controller.user.UserActivity" />
         <activity android:name=".room.recyclerView.RecyclerUserActivity" />

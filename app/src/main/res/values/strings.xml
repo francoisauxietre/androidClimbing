@@ -3,7 +3,17 @@
     <!-- Manifest.xml   -->
     <string name="app_name">ClimbingAndroid</string>
     <string name="title_activity_card">CardActivity</string>
+    <!--new_climber-->
+    <string name="activity_new_climber_last_name">last name</string>
+    <string name="activity_new_climber_first_name">first name</string>
+    <string name="activity_new_climber_date">date</string>
+    <string name="activity_new_climber_card_id">card_id</string>
+    <string name="activity_new_climber_button_add">Add</string>
+    <string name="activity_new_climber_button_back">Back</string>
 
+    <!--    new climber menu-->
+<string name="activity_climber_list_new_climber_menu">New climber</string>
+   <string name="activity_climber_list_new_climber_title">Add new climber</string>
     <!--    user-->
     <string name="activity_user_time">Time</string>
     <string name="a1">1</string>
