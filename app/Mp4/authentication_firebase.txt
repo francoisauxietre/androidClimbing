@@ -1,2 +1,150 @@
 authentication firebase
 YvqHufYV0mMjiVv7mNg1t8chTXG3
+
+
+Par défaut, vos règles autorisent toutes les lectures et écritures des utilisateurs authentifiés.
+
+Après avoir défini votre structure de données, vous devez spécifier des règles pour sécuriser vos données
+
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}
+
+class ok pour methode post vers spring.auxietre.com
+
+package net.javaguides.fileupload.controller;
+
+import java.io.IOException;
+import java.io.InputStream;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
+
+import net.javaguides.fileupload.dao.FileUploadDao;
+
+@WebServlet("/uploadServlet")
+@MultipartConfig(maxFileSize = 16177215) // upload file's size up to 16MB
+public class FileUploadServlet extends HttpServlet {
+
+	private static final long serialVersionUID = 1L;
+	
+	private FileUploadDao fileUploadDao;
+
+	@Override
+	public void init() {
+		fileUploadDao = new FileUploadDao();
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// gets values of text fields
+		String firstName = request.getParameter("firstName");
+		String lastName = request.getParameter("lastName");
+
+		InputStream inputStream = null; // input stream of the upload file
+
+		String message = null;
+		// obtains the upload file part in this multipart request
+		Part filePart = request.getPart("photo");
+		if (filePart != null) {
+			// prints out some information for debugging
+			System.out.println(filePart.getName());
+			System.out.println(filePart.getSize());
+			System.out.println(filePart.getContentType());
+
+			// obtains input stream of the upload file
+			inputStream = filePart.getInputStream();
+		}
+
+		// sends the statement to the database server
+		int row = fileUploadDao.uploadFile(firstName, lastName, inputStream);
+		if (row > 0) {
+			message = "File uploaded and saved into database";
+		}
+		
+		// sets the message in request scope
+        request.setAttribute("Message", message);
+         
+        // forwards to the message page
+        getServletContext().getRequestDispatcher("/message.jsp")
+        .forward(request, response);
+	}
+}
+
+
+
+DAO 
+
+
+import java.io.InputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class FileUploadDao {
+
+	  private static final String url = "jdbc:mysql://localhost:3306/java_demo?useSSL=false";
+	  private static final String user = "root";
+	  private static final String password = "root";
+
+	  private static final String sql = "INSERT INTO users (first_name, last_name, photo) values (?, ?, ?)";
+      
+    public int uploadFile(String firstName, String lastName, InputStream file) {
+        int row = 0;
+        try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+        try (Connection connection = DriverManager
+            .getConnection(url, user, password);
+            // Step 2:Create a statement using connection object
+            PreparedStatement preparedStatement = connection
+            .prepareStatement(sql)) {
+        	
+        	preparedStatement.setString(1, firstName);
+        	preparedStatement.setString(2, lastName);
+        	if (file != null) {
+                // fetches input stream of the upload file for the blob column
+        		preparedStatement.setBlob(3, file);
+            }
+        	
+            // sends the statement to the database server
+            row = preparedStatement.executeUpdate();
+            
+        } catch (SQLException e) {
+            // process sql exception
+            printSQLException(e);
+        }
+        return row;
+    }
+
+    private void printSQLException(SQLException ex) {
+        for (Throwable e: ex) {
+            if (e instanceof SQLException) {
+                e.printStackTrace(System.err);
+                System.err.println("SQLState: " + ((SQLException) e).getSQLState());
+                System.err.println("Error Code: " + ((SQLException) e).getErrorCode());
+                System.err.println("Message: " + e.getMessage());
+                Throwable t = ex.getCause();
+                while (t != null) {
+                    System.out.println("Cause: " + t);
+                    t = t.getCause();
+                }
+            }
+        }
+    }
+}

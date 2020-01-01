@@ -93,9 +93,9 @@ public class RecyclerView_config {
         public void onBindViewHolder(@NonNull ClimberItemView holder, int position) {
             holder.bind(climberList.get(position), keys.get(position));
             if((position % 2 == 0)){
-                holder.itemView.setBackgroundColor(Color.parseColor("#FF6D88F0"));
+                holder.itemView.setBackgroundColor(Color.parseColor("#808080"));
             }else{
-                holder.itemView.setBackgroundColor(Color.parseColor("#FFFAF8"));
+                holder.itemView.setBackgroundColor(Color.parseColor("#A1BEB8"));
             }
         }
 
