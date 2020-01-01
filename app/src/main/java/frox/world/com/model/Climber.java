@@ -59,8 +59,8 @@ public class Climber {
     @ColumnInfo(name = "date")
     private String date;
 
-    @ColumnInfo(name = "card_id")
-    private String card_id;
+//    @ColumnInfo(name = "card_id")
+//    private String card_id;
 
     @ColumnInfo(name = "file_name")
     private String file_name;

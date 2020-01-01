@@ -130,7 +130,7 @@ public class FirebaseDatabaseHelper {
 //                        HttpRequest.BodyPublishers.ofFile(file))
 //                .build();
 //
-//        log.debug("Execute HttpClient Method:『{}』, Url:『{}』", request.method(),
+//        log.i("FIREBASE_DATABASE_HELPER_post:『{}』, Url:『{}』", request.method(),
 //                request.uri().toString());
 //        return client.send(request, HttpResponse.BodyHandlers.ofString());
 //    }

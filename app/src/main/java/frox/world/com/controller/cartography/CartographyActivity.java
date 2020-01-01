@@ -93,7 +93,7 @@ public class CartographyActivity extends AppCompatActivity {
                 .addOnSuccessListener(this, new OnSuccessListener<Location>() {
                     @Override
                     public void onSuccess(Location location) {
-                        Log.d("GPS", "fused!");
+                        Log.d("CARTOGRAPGY_ACTIVITY_gps", "fused!");
                         if (location != null) {
                             latitude.setText("latitude :"+location.getLatitude());
                             longitude.setText("longitude :"+location.getLongitude());
@@ -137,7 +137,7 @@ public class CartographyActivity extends AppCompatActivity {
 
         path = new ArrayList<GeoPoint>();
 
-        Log.d("GPS", "onCreate");
+        Log.d("CARTOGRAPGY_ACTIVITY_gps", "onCreate");
 
         initialiserLocalisation();
 
@@ -154,22 +154,19 @@ public class CartographyActivity extends AppCompatActivity {
         public void onLocationChanged(Location localisation) {
             Toast.makeText(getApplicationContext(), bestProvider + " localisation", Toast.LENGTH_SHORT).show();
             if (location != null) {
-                Log.d("GPS", "localisation : ");
+                Log.d("CARTOGRAPGY_ACTIVITY_gps", "localisation : ");
                 String coordonnees = String.format("Latitude : %f - Longitude : %f\n", localisation.getLatitude(), localisation.getLongitude());
-                Log.d("GPS", coordonnees);
+                Log.d("CARTOGRAPGY_ACTIVITY_gps", coordonnees);
                 String autres = String.format("Vitesse : %f - Altitude : %f - Cap : %f\n", localisation.getSpeed(), localisation.getAltitude(), localisation.getBearing());
-                Log.d("GPS", autres);
+                Log.d("CARTOGRAPGY_ACTIVITY_gps", autres);
                 //String timestamp = String.format("Timestamp : %d\n", localisation.getTime());
-                //Log.d("GPS", "timestamp : " + timestamp);
+                //Log.d("CARTOGRAPGY_ACTIVITY_gps", "timestamp : " + timestamp);
                 SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
                 Date date = new Date(localisation.getTime());
-                Log.d("GPS", sdf.format(date));
+                Log.d("CARTOGRAPGY_ACTIVITY_gps", sdf.format(date));
 
                 String strLatitude = String.format("Latitude : %f", localisation.getLatitude());
                 String strLongitude = String.format("Longitude : %f", localisation.getLongitude());
-
-                Log.w("______________entre_______", "test");
-
 
                 latitude.setText("test");
                 longitude.setText(strLongitude);
@@ -225,19 +222,19 @@ public class CartographyActivity extends AppCompatActivity {
                 try {
                     adresses = geocoder.getFromLocation(localisation.getLatitude(), localisation.getLongitude(), 1);
                 } catch (IOException ioException) {
-                    Log.e("GPS", "erreur", ioException);
+                    Log.e("CARTOGRAPGY_ACTIVITY_gps", "erreur", ioException);
                 } catch (IllegalArgumentException illegalArgumentException) {
-                    Log.e("GPS", "erreur " + coordonnees, illegalArgumentException);
+                    Log.e("CARTOGRAPGY_ACTIVITY_gps", "erreur " + coordonnees, illegalArgumentException);
                 }
 
                 if (adresses == null || adresses.size() == 0) {
-                    Log.e("GPS", "erreur aucune adresse !");
+                    Log.e("CARTOGRAPGY_ACTIVITY_gps", "erreur aucune adresse !");
                 } else {
                     Address adresse = adresses.get(0);
                     ArrayList<String> addressFragments = new ArrayList<String>();
 
                     String strAdresse = adresse.getAddressLine(0) + ", " + adresse.getLocality();
-                    Log.d("GPS", "adresse : " + strAdresse);
+                    Log.d("CARTOGRAPGY_ACTIVITY_gps", "adresse : " + strAdresse);
 
                     for (int i = 0; i <= adresse.getMaxAddressLineIndex(); i++) {
                         addressFragments.add(adresse.getAddressLine(i));
@@ -287,7 +284,7 @@ public class CartographyActivity extends AppCompatActivity {
     }
 
     private void initialiserLocalisation() {
-        Log.w("GPS--------------------", "initialiser location ");
+        Log.w("CARTOGRAPGY_ACTIVITY_gps", "initialiser location ");
 
 
         if (locationManager == null) {
@@ -312,7 +309,7 @@ public class CartographyActivity extends AppCompatActivity {
             criteres.setPowerRequirement(Criteria.POWER_MEDIUM);
 
             bestProvider = locationManager.getBestProvider(criteres, false);
-            Log.d("GPS", "providers --------------: " + bestProvider);
+            Log.d("CARTOGRAPGY_ACTIVITY_gps", "providers --------------: " + bestProvider);
         }
 
         if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -327,25 +324,25 @@ public class CartographyActivity extends AppCompatActivity {
         }
         //locationManager.requestLocationUpdates(bestProvider, 1000, 2, locationListener);
         if (bestProvider != null) {
-            Log.w("GPS--------------------", bestProvider.toString());
+            Log.w("CARTOGRAPGY_ACTIVITY_gps", bestProvider.toString());
             // dernière position connue
             if (ActivityCompat.checkSelfPermission(this,
                     Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                Log.d("GPS", "no permissions !");
+                Log.d("CARTOGRAPGY_ACTIVITY_gps", "no permissions !");
                 return;
             }
 
             Location localisation = locationManager.getLastKnownLocation(bestProvider);
             if (localisation == null) {
                 // on notifie la localisation
-                Log.d("GPS", "derniere localisation!");
+                Log.d("CARTOGRAPGY_ACTIVITY_gps", "derniere localisation!");
                 locationListener.onLocationChanged(localisation);
             }
 
             // on configure la mise à jour automatique : au moins 10 mètres et 15 secondes
             locationManager.requestLocationUpdates(bestProvider, 1000, 0, locationListener);
         } else {
-            Log.w("GPS--------------------", "pas de provider ");
+            Log.w("CARTOGRAPGY_ACTIVITY_gps", "pas de provider ");
         }
     }
 
@@ -361,7 +358,7 @@ public class CartographyActivity extends AppCompatActivity {
     //gps plus couteuse mais mieux pour falaise
     private void gps() {
 //
-        Log.i("GPS", "enter in activity cartography gps");
+        Log.i("CARTOGRAPGY_ACTIVITY_gps", "enter in activity cartography gps");
         initialiserLocalisation();
 //
 //        //on va essayerde trouver la position courant du telephone
@@ -400,7 +397,7 @@ public class CartographyActivity extends AppCompatActivity {
 //        String bestProvider = locationManagerTel.getBestProvider(criteria, true);
 //
 //        for (String name : providerNames) {
-//            Log.w("GPSwarn", name.toLowerCase().toString());
+//            Log.w("CARTOGRAPGY_ACTIVITY_gps", name.toLowerCase().toString());
 //            providers.add(locationManagerTel.getProvider(name));
 //        }
 //
@@ -436,7 +433,7 @@ public class CartographyActivity extends AppCompatActivity {
 //            public void onLocationChanged(Location location) {
 //                latitude.setText("" + location.getLatitude());
 //                longitude.setText("" + location.getLongitude());
-//                Log.d("GPS", "Latitude " + location.getLatitude() + " et longitude " + location.getLongitude());
+//                Log.d("CARTOGRAPGY_ACTIVITY_gps", "Latitude " + location.getLatitude() + " et longitude " + location.getLongitude());
 //            }
 //        });
 //        //on affiche la position courante
@@ -458,7 +455,7 @@ public class CartographyActivity extends AppCompatActivity {
 //            locationManagerTel = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 //            criteria = new Criteria();
 //            if (locationManagerTel == null) {
-//                Log.d("GPS-getLocation", "locationManager == null");
+//                Log.d("CARTOGRAPGY_ACTIVITY_getLocation", "locationManager == null");
 //            }
 //            if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 //                // TODO: Consider calling
@@ -486,7 +483,7 @@ public class CartographyActivity extends AppCompatActivity {
 //                }
 //            }
 //        } finally {
-//            Log.d("getLocation","Unable load getLcation()");
+//            Log.d("CARTOGRAPGY_ACTIVITY_getLocation","Unable load getLcation()");
 //        }
 //    }
 

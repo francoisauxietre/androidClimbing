@@ -119,12 +119,15 @@
 
     <TextView
         android:id="@+id/activity_new_climber_show_upload"
-        android:layout_width="280dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:text="@string/activity_new_climber_button_show_upload"
         app:layout_constraintBottom_toTopOf="@+id/activity_new_climber_progress_bar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.916"
         app:layout_constraintStart_toEndOf="@+id/activity_new_climber_button_upload"
-        app:layout_constraintTop_toBottomOf="@+id/activity_new_climber_edit_text_enter_file_name" />
+        app:layout_constraintTop_toBottomOf="@+id/activity_new_climber_edit_text_enter_file_name"
+        app:layout_constraintVertical_bias="0.728" />
 
     <ProgressBar
         android:id="@+id/activity_new_climber_progress_bar"
@@ -134,9 +137,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="1dp"
+        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/activity_new_climber_image_view"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_new_climber_button_upload"></ProgressBar>
 

@@ -1,4 +1,5 @@
 package frox.world.com.controller;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 import androidx.room.TypeConverter;
@@ -39,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
     private Button cartography;
     private Button userProfile;
     private String userName;
-
     private Button recyclerUser;
 
     private AppDatabase db;
@@ -104,9 +104,6 @@ public class MainActivity extends AppCompatActivity {
 //        });
 
 
-
-
-
         firstName.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -115,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 firstNameActive = true;
-                if (firstNameActive && lastNameActive){
+                if (firstNameActive && lastNameActive) {
                     createCard.setEnabled(s.toString().length() != 0);
                 }
             }
@@ -135,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 lastNameActive = true;
-                if (firstNameActive && lastNameActive){
+                if (firstNameActive && lastNameActive) {
                     createCard.setEnabled(s.toString().length() != 0);
                 }
 
@@ -148,17 +145,16 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
         createCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Context context = getApplicationContext();
-                CharSequence text = "Hello " + firstName.getText() +" !";
+                CharSequence text = "Hello " + firstName.getText() + " !";
                 int duration = Toast.LENGTH_SHORT;
                 Toast.makeText(context, text, duration).show();
                 Intent gameActivityIntent = new Intent(MainActivity.this, GameActivity.class);
                 userName = firstName.getText().toString() + " " + lastName.getText().toString();
-                gameActivityIntent.putExtra("user",userName);
+                gameActivityIntent.putExtra("user", userName);
                 startActivity(gameActivityIntent);
             }
         });
@@ -176,12 +172,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent apiActivityIntent = new Intent(MainActivity.this, ApiActivity.class);
                 startActivity(apiActivityIntent);
-        }});
+            }
+        });
 
         climber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent climberActivity= new Intent(MainActivity.this, ClimberActivity.class);
+                Intent climberActivity = new Intent(MainActivity.this, ClimberActivity.class);
                 startActivity(climberActivity);
             }
         });
@@ -189,15 +186,14 @@ public class MainActivity extends AppCompatActivity {
         cartography.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent cardActivity= new Intent(MainActivity.this, CartographyActivity.class);
+                Intent cardActivity = new Intent(MainActivity.this, CartographyActivity.class);
                 startActivity(cardActivity);
             }
         });
 
 
-
-
     }
+
     public static class Converters {
         @TypeConverter
         public static Date fromTimestamp(Long value) {

@@ -32,13 +32,15 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
+
         try {
             setContentView(R.layout.activity_photo);
             setUserInterface();
 
         } catch (Exception e) {
-            Log.i("info", "error while taking photo in PhotoActivity");
-            Toast.makeText(this, "error, please retry", Toast.LENGTH_SHORT).show();
+            Log.i("PHOTO_ACTIVITY", getString(R.string.error1));
+            Toast.makeText(this, getString(R.string.error1), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -61,31 +63,32 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
 
     private void selectImage() {
 
-        final CharSequence[] items = {"Take photo", "Chose from library", "Cancel"};
+        final CharSequence[] items = {getString(R.string.takePhoto), getString(R.string.chosseLibrary), getString(R.string.cancel)};
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("add a photo");
-        Log.i("info", "----------------testt---------");
+        builder.setTitle(getString(R.string.addPhoto));
         builder.setItems(items, new DialogInterface.OnClickListener(){
 
 
             @Override
             public void onClick(DialogInterface dialog, int item) {
-                boolean result =  true;
-                Log.i("TAG", "on click");
-                if(items[item].equals("Take photo")){
+
+                if(items[item].equals(getString(R.string.takePhoto))){
                     take_picture();
+                    Log.i("PHOTO_ACTIVITY_takePicture", "on click");
                 }
 
-                if(items[item].equals("Chose from library")){
+                if(items[item].equals(getString(R.string.chosseLibrary))){
                     librayIntent();
+                    Log.i("PHOTO_ACTIVITY_fromLibrary", "on click");
                 }
 
-                if(items[item].equals("Cancel")){
+                if(items[item].equals(getString(R.string.cancel))){
                     dialog.dismiss();
                 }
             }
 
         });
+        //Acces au content provider
         builder.create();
         builder.show();
 
@@ -111,7 +114,6 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
 //            File photoFile = null;
 //            try {
 //                photoFile = createImageFile();
-//                Log.i("photo", ""+photoFile);
 //            } catch (IOException ex) {
 //                // Error occurred while creating the File
 //            }
@@ -124,11 +126,11 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
 //                startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
 //            }
 //        }
-        Log.i("photo avant", "essai de sauver une photo");
+        Log.i("PHOTO_ACTIVITY", "essai de sauver une photo");
         File photoFile = null;
         try {
             photoFile = createImageFile();
-            Log.i("photo", ""+photoFile);
+            Log.i("PHOTO_ACTIVITY", ""+photoFile);
         } catch (IOException ex) {
             // Error occurred while creating the File
         }
@@ -158,7 +160,7 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
 //    }
 
     private void librayIntent(){
-        Log.i("TAG", "library");
+        Log.i("PHOTO_ACTIVITY", "acces a la librairie du telephone");
         Intent library_Intent = new Intent();
         library_Intent.setType("images/*");
         library_Intent.setAction(Intent.ACTION_GET_CONTENT);

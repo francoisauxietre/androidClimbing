@@ -39,6 +39,7 @@ import frox.world.com.model.Climber;
 
 public class NewClimberActivity extends AppCompatActivity {
     private static final int PICK_IMAGE_REQUEST = 1;
+    private String path = "imagesUpload";
 
     private EditText lastName;
     private EditText firstName;
@@ -60,6 +61,9 @@ public class NewClimberActivity extends AppCompatActivity {
     public Uri imageUri;
     private StorageReference storageReference;
     private DatabaseReference databaseReference;
+    // pour tout mettre dans le meme grimpeur
+    private String uploadImageId;
+    private String fileName;
 
 
     @Override
@@ -83,8 +87,8 @@ public class NewClimberActivity extends AppCompatActivity {
         // ajout pour tester la sauvegarde en base de donnee
 
 
-        storageReference = FirebaseStorage.getInstance().getReference("imagesUpload");
-        databaseReference = FirebaseDatabase.getInstance().getReference("imagesUpload");
+        storageReference = FirebaseStorage.getInstance().getReference(path);
+        databaseReference = FirebaseDatabase.getInstance().getReference(path);
 
 
         addButton.setOnClickListener(new View.OnClickListener() {
@@ -95,6 +99,8 @@ public class NewClimberActivity extends AppCompatActivity {
                 climber.setLast_name(lastName.getText().toString());
                 climber.setDate(date.getText().toString());
                 climber.setCategory(spinner.getSelectedItem().toString());
+                climber.setImageUrl(uploadImageId);
+                climber.setFile_name(filename.getText().toString());
                 new FirebaseDatabaseHelper().addClimber(climber, new FirebaseDatabaseHelper.DataStatus() {
                     @Override
                     public void DataIsLoaded(List<Climber> climberList, List<String> keysList) {
@@ -103,7 +109,7 @@ public class NewClimberActivity extends AppCompatActivity {
 
                     @Override
                     public void DataIsInserted() {
-                        String name = "a new climber name:" + climber.getFirst_name().toLowerCase().toString() + " is create and add to firebase";
+                        String name = "a new climber name:" + climber.getFirst_name().toLowerCase() + " is create and add to firebase";
                         Toast.makeText(
                                 NewClimberActivity.this, name, Toast.LENGTH_LONG).show();
                     }
@@ -146,7 +152,8 @@ public class NewClimberActivity extends AppCompatActivity {
         showUpload.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent imageIntent = new Intent(NewClimberActivity.this, ImageActivity.class);
+                startActivity(imageIntent);
             }
         }));
 
@@ -165,15 +172,13 @@ public class NewClimberActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
             imageUri = data.getData();
-
-            Log.i("-----------------------ICI---------------", "test");
             imageView.setImageURI(imageUri);
         }
     }
 
     private void uploadFile() {
         if (imageUri != null) {
-            Log.i("imagenull", "imageUri == null");
+            Log.i("NEW_CLIMBER_ACTIVITY", "imageUri est nulle");
            StorageReference fileReference = storageReference.child(System.currentTimeMillis()+"."+getFileExtension(NewClimberActivity.this,imageUri));
            fileReference.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                @Override
@@ -186,7 +191,7 @@ public class NewClimberActivity extends AppCompatActivity {
                            progressBar.setProgress(0);
                        }
                    }, 500);
-                   Toast.makeText(NewClimberActivity.this, " upload succed to firebase database", Toast.LENGTH_SHORT).show();
+                   Toast.makeText(NewClimberActivity.this, getString(R.string.success), Toast.LENGTH_SHORT).show();
 
                    //ici on devrait avoir getDownloadUrl
                    //Uri url = taskSnapshot.getDownloadUrl();
@@ -194,21 +199,21 @@ public class NewClimberActivity extends AppCompatActivity {
                    while(!uri.isComplete());
                    Uri url = uri.getResult();
 
-                   Toast.makeText(NewClimberActivity.this, "Upload Success, download URL " +
+                   Toast.makeText(NewClimberActivity.this, R.string.success +
                            url.toString(), Toast.LENGTH_LONG).show();
-                   Log.i("Upload success ", url.toString());
+                   Log.i("NEW_CLIMBER_ACTIVITY_onSucces ", url.toString());
 
 
                    Climber climber = new Climber(filename.getText().toString().trim(), url.toString());
                    //TODO VERIFIER QU'ON A BIEN UN UPLOADIMAGE ID dans climber
-                   String uploadImageId = databaseReference.push().getKey();
+                   uploadImageId = databaseReference.push().getKey();
                    databaseReference.child(uploadImageId).setValue(climber);
 
                }
            }).addOnFailureListener(new OnFailureListener() {
                @Override
                public void onFailure(@NonNull Exception e) {
-                   Toast.makeText(NewClimberActivity.this, " error while uploading to firebase database", Toast.LENGTH_SHORT).show();
+                   Toast.makeText(NewClimberActivity.this, getString(R.string.errorUploadingImage), Toast.LENGTH_SHORT).show();
                }
            }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
                @Override
@@ -218,8 +223,8 @@ public class NewClimberActivity extends AppCompatActivity {
                }
            });
         } else {
-            Log.i("imageOk", "imageUri != null");
-            Toast.makeText(this, " no file selected", Toast.LENGTH_SHORT).show();
+            Log.i("NEW_CLIMBER_ACTIVITY", "imageUri != null");
+            Toast.makeText(this, getString(R.string.noFile), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -233,11 +238,12 @@ public class NewClimberActivity extends AppCompatActivity {
             extension = mime.getExtensionFromMimeType(context.getContentResolver().getType(uri));
         } else {
             //If scheme is a File
-            //This will replace white spaces with %20 and also other special characters. This will avoid returning null values on file name with spaces and special characters.
+            //This will replace white spaces with %20 and also other special characters.
+            // This will avoid returning null values on file name with spaces and special characters.
             extension = MimeTypeMap.getFileExtensionFromUrl(Uri.fromFile(new File(uri.getPath())).toString());
 
         }
-        Log.i("URI", "" +extension);
+        Log.i("NEW_CLIMBER_ACTIVITY:file_extension", "" +extension);
         return extension;
     }
 }

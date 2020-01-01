@@ -16,7 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat">
-        <activity android:name=".firebase.ClimberDetailsActivity"></activity>
+        <activity android:name=".controller.authentication.LoginActivity"></activity>
+        <activity android:name=".firebase.ImageActivity" />
+        <activity android:name=".firebase.ClimberDetailsActivity" />
         <activity android:name=".firebase.NewClimberActivity" />
         <activity android:name=".firebase.FirebaseActivity" />
         <activity android:name=".controller.authentication.FacebookLoginActivity" />

@@ -50,7 +50,7 @@ public abstract class AppDatabase  extends RoomDatabase {
 
     private static User addUser(final AppDatabase db, User user) {
         db.userDAO().insertAll(user);
-        Log.i("Database", "add "+user.getFirst_name());
+        Log.i("APPDATABASE", "ajout d un nouvel utilisateur "+user.getFirst_name());
         return user;
     }
 

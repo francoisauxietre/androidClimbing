@@ -31,6 +31,7 @@ public class ClimberActivity extends AppCompatActivity {
     private TextView finalResult;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +55,6 @@ public class ClimberActivity extends AppCompatActivity {
 
         private String resp;
         private String url = "http://spring.auxietre.com/climbers/";
-        private String url1 = "https://api.myjson.com/kp9wz/";
         private String response;
         ProgressDialog progressDialog;
         private JSONObject jsonObject;
@@ -76,7 +76,7 @@ public class ClimberActivity extends AppCompatActivity {
                     JSONArray jsonArray = new JSONArray(response);
                     for (int i = 0; i < jsonArray.length(); i++) {
                         jsonObject = jsonArray.getJSONObject(i);
-                        Log.i(ClimberActivity.class.getName(), jsonObject.getString("text"));
+                        Log.i("CLIMBER_ACTIVITY", jsonObject.getString("text"));
                     }
 
                 } finally {
@@ -116,8 +116,8 @@ public class ClimberActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             progressDialog = ProgressDialog.show(ClimberActivity.this,
-                    "ProgressDialog",
-                    "Wait for " + time.getText().toString() + " seconds");
+                    getString(R.string.progress),
+                    getString(R.string.waitFor) + time.getText().toString() +getString(R.string.seconds));
         }
 
 

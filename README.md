@@ -5,7 +5,7 @@ pour firebase
 reussite de l'instalation de google analytics et du depot de project sur la page de la console de firebase
 
 
-Travail par ordre de chronologie
+##Travail par ordre de chronologie
 0 travail sur les différents écrans 
 1 reccherche des model
 2 ajout de gps avec openstreet map 
@@ -34,4 +34,10 @@ Je suis super content mais c'est long et chaque dépendances à ses propres vari
 .
 
 2 contruction de room
-2
+
+##CREATION DE LOG PERSO POUR DEBUGGAGE ET POUR UTILISER APRES EN PRODUCTION (tout avec Log.i Log.w ...)
+a chaque Log je met l'activity qui est en jeu et en general _ suivi du nom de la methode qui appel le Log
+j'ai utilisé le Log.i et log.w seulement pour l'instant
+ex: 
+Log.w("DATABASE", "erreur pendant la recuperation des images ");
+Log.i("DEBUGGAGE", ""+ climber.getFile_name());

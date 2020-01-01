@@ -93,7 +93,7 @@ public class RecyclerUserActivity extends AppCompatActivity implements View.OnCl
 
         viewModel = ViewModelProviders.of(this).get(ViewModel.class);
         recyclerAdapter = new RecyclerAdapter(usersList);
-        Log.i("USERLIST ", ""+usersList.size());
+        Log.i("RECYCLER_USER_ACTIVITY", ""+usersList.size());
         viewModel.getAllUsers().observe(this, new Observer<List<User>>() {
             @Override
             public void onChanged(List<User> users) {
@@ -120,7 +120,7 @@ public class RecyclerUserActivity extends AppCompatActivity implements View.OnCl
 
     @Override
     public void onClick(View v) {
-        Log.i("info", "click in RecyclerActivity");
+        Log.i("USER_ACTIVITY_onClick", "click in RecyclerActivity");
 //        Intent recycler_intent = new Intent(getApplicationContext(), UserActivity.class);
 //        startActivityForResult(recycler_intent, 0);
     }
@@ -129,12 +129,11 @@ public class RecyclerUserActivity extends AppCompatActivity implements View.OnCl
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
         super.onActivityResult(requestCode, resultCode, intent);
 
-        Log.i("info", "retour de User Activity");
+        Log.i("USER_ACTIVITY_onActivityResult", "retour de User Activity");
         Bundle extras = intent.getExtras();
 
         User user = intent.getParcelableExtra("user");
         //cree instance viewmodel
-        //crer un add
 
         viewModel.insert(user);
 //        usersList.add(user);
