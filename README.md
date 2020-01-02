@@ -41,3 +41,16 @@ j'ai utilisé le Log.i et log.w seulement pour l'instant
 ex: 
 Log.w("DATABASE", "erreur pendant la recuperation des images ");
 Log.i("DEBUGGAGE", ""+ climber.getFile_name());
+
+##Deux versions de mon Apk ont été soumises à Firebase 
+la première étant un echec suite à une methode mal lancée en asyncTask (requete Http vers le serveur spring.auxietre.com)
+la deuxième est une réussite avec semble t-il que des erreurs minimes 
+le test à été fait sur un telephone samsung galaxy 8 de apk2 du dossier Mp4
+dans ce dossier vous trouverez toutes les captures d'écrans réalisées tous au long de mon projet 
+et les google docs, pdf, et google slide de mon projet total.
+Je n'ai pas encore tout fait loin de la, mais ce projet me tiens énormément à coeur depuis plus de 10 ans, 
+et commencer à avoir les compétences informatique pour tout réaliser de A à Z était un rêve qui
+se concretise de jours en jour 
+##GRACE A TOUS VOS COURS, merci à tous les professeurs, doctorans, maître de conférence
+##qui m'ont motivé et suivi pendant ces trois années merveilleuses A l'Istic.
+

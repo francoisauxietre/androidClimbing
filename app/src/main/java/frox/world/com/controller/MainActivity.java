@@ -179,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent climberActivity = new Intent(MainActivity.this, ClimberActivity.class);
-                startActivity(climberActivity);
+                //startActivity(climberActivity);
             }
         });
 

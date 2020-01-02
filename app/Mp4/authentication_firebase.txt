@@ -1,6 +1,9 @@
 authentication firebase
 YvqHufYV0mMjiVv7mNg1t8chTXG3
 
+lien vers les resultats de la console firebase
+https://console.firebase.google.com/u/0/project/climbingandroid/testlab/histories/bh.fe369bdc17cdc189/matrices/8906635925661368519/executions/bs.15d9dbc246bead2e/performance
+
 facebook finir https://developers.facebook.com/docs/facebook-login/android/
 
 Par défaut, vos règles autorisent toutes les lectures et écritures des utilisateurs authentifiés.

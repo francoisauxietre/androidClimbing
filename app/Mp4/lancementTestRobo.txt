@@ -1,0 +1,95 @@
+0:03
+Lancez l'activité principale
+
+0:05
+Appuyez sur "Firebase"
+activity_main_button_firebase
+0:07
+Appuyez de manière prolongée sur l'élément
+android.widget.ImageView
+0:09
+Appuyez sur l'élément
+android.widget.ImageView
+0:10
+Appuyez sur l'élément
+android.widget.LinearLayout
+0:11
+Attendez la réponse
+
+0:42
+Appuyez sur "Add photo"
+activity_new_climber_button_add_photo
+0:44
+Appuyez sur "Retour"
+
+0:45
+Attendez la réponse
+
+1:16
+Appuyez sur "Button"
+activity_new_climber_button_back
+1:16
+Appuyez sur l'élément
+android.view.ViewGroup
+1:18
+Attendez la réponse
+
+1:49
+Appuyez sur "Back"
+activity_climber_detail_button_back
+1:49
+Appuyez sur l'élément
+android.view.ViewGroup
+1:50
+Attendez la réponse
+
+2:21
+Appuyez sur "Update"
+activity_climber_detail_button_Update
+2:21
+Attendez la réponse
+
+2:52
+Saisissez "text"
+activity_climber_detail_last_name
+2:52
+Attendez la réponse
+
+3:23
+Appuyez sur "Delete"
+activity_climber_detail_button_delete
+3:24
+Appuyez sur l'élément
+android.view.ViewGroup
+3:25
+Attendez la réponse
+
+3:56
+Saisissez "text"
+activity_climber_detail_date
+3:57
+Attendez la réponse
+
+4:27
+Saisissez "text"
+activity_climber_detail_first_name
+4:29
+Attendez la réponse
+
+5:00
+Appuyez sur "Delete"
+activity_climber_detail_button_delete
+5:01
+Appuyez de manière prolongée sur l'élément
+android.widget.ImageView
+5:02
+Appuyez sur "Button"
+button2
+5:02
+Appuyez sur l'élément
+android.widget.ImageView
+5:03
+Appuyez sur l'élément
+android.widget.LinearLayout
+5:03
+Attendez la réponse
