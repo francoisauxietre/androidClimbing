@@ -154,6 +154,8 @@
     <string name="activity_cartography_text_view_longitude">longitude</string>
     <string name="activity_cartography_text_view_adress">adress</string>
     <string name="activity_cartography_enable_gps">please enable gps to find your location</string>
+    <string name="activity_cartography_input_city">City</string>
+
 
     <!--    photo -->
     <string name="activity_photo_button_save">Save</string>
@@ -191,4 +193,5 @@
     <!-- Twitter consumer key and secret -->
     <string name="twitter_consumer_key" translatable="false">YOUR_CONSUMER_KEY</string>
     <string name="twitter_consumer_secret" translatable="false">YOUR_CONSUMER_SECRET</string>
+    <string name="activity_cartography_button_search">Search</string>
 </resources>

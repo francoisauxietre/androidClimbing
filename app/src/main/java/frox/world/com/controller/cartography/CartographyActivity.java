@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -34,6 +35,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.osmdroid.api.IMapController;
 import org.osmdroid.config.Configuration;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
@@ -75,12 +79,16 @@ public class CartographyActivity extends AppCompatActivity {
     CompassOverlay mCompassOverlay;
     MyLocationNewOverlay mLocationOverlay;
     RotationGestureOverlay mRotationGestureOverlay;
-    Geocoder geocoder = new Geocoder(this, Locale.getDefault());
+    private IMapController monMapController;
 
+    Geocoder geocoder;
+    private double lat;
+    private double lon;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        geocoder = new Geocoder(this, Locale.getDefault());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cartography);
 
@@ -95,9 +103,11 @@ public class CartographyActivity extends AppCompatActivity {
                     public void onSuccess(Location location) {
                         Log.d("CARTOGRAPGY_ACTIVITY_gps", "fused!");
                         if (location != null) {
-                            latitude.setText("latitude :"+location.getLatitude());
-                            longitude.setText("longitude :"+location.getLongitude());
-                            address.setText("altitude :"+location.getAltitude());
+                            lat = location.getLatitude();
+                            lon = location.getLongitude();
+                            latitude.setText("latitude :" + location.getLatitude());
+                            longitude.setText("longitude :" + location.getLongitude());
+                            address.setText("altitude :" + location.getAltitude());
                         }
                     }
                 });
@@ -106,12 +116,12 @@ public class CartographyActivity extends AppCompatActivity {
         Configuration.getInstance().setUserAgentValue(BuildConfig.APPLICATION_ID);
 
         locate = findViewById(R.id.activity_cartography_locate);
-        locate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                initialiserLocalisation();
-            }
-        });
+//        locate.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                initialiserLocalisation();
+//            }
+//        });
 
         etat = 0;
 
@@ -145,6 +155,8 @@ public class CartographyActivity extends AppCompatActivity {
         mLocationOverlay.enableMyLocation();
         myOpenMapView.setMultiTouchControls(true);
         myOpenMapView.getOverlays().add(mLocationOverlay);
+        monMapController = myOpenMapView.getController();
+
     }
 
 
@@ -282,6 +294,69 @@ public class CartographyActivity extends AppCompatActivity {
         super.onDestroy();
         arreterLocalisation();
     }
+
+    public void recentreMap(View view) {
+
+        monMapController.setCenter(new GeoPoint(lat, lon));
+
+    }
+
+
+    public void onSearch(View view) {
+        TextView maTextView = (TextView) findViewById(R.id.activity_cartography_search_bar);
+        Nominatim.getGeopositionFromAddress(maTextView.getText().toString(), this);
+        maTextView.setText("");
+    }
+
+    public void geolocalization(JSONObject result){
+        if(result == null){
+            return;
+        }
+
+        try {
+            //deja on va purger notre map de tous les markers qui peuvent y être
+            purgeMarkers();
+
+            double lat = result.getDouble("lat");
+            double lon = result.getDouble("lon");
+            monMapController.setCenter(new GeoPoint(lat, lon));
+
+            addMarker(new GeoPoint(lat, lon));
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void addMarker(GeoPoint g){
+        List<OverlayItem> mesItems = new ArrayList<>();
+        OverlayItem monOverlayItem = new OverlayItem("","", g);
+        Drawable newMarker = this.getResources().getDrawable(R.drawable.marker_default_focused_base);
+        monOverlayItem.setMarker(newMarker);
+
+        mesItems.add(monOverlayItem);
+
+        ItemizedIconOverlay<OverlayItem> currentLocationOverlay = new ItemizedIconOverlay<OverlayItem>(mesItems,
+                new ItemizedIconOverlay.OnItemGestureListener<OverlayItem>() {
+                    public boolean onItemSingleTapUp(final int index, final OverlayItem item) {
+                        return true;
+                    }
+
+                    public boolean onItemLongPress(final int index, final OverlayItem item) {
+                        return true;
+                    }
+                }, this);
+        myOpenMapView.getOverlays().add(currentLocationOverlay);
+    }
+
+    public void addMarker(List<GeoPoint> l){
+        l.forEach(x -> addMarker(x));
+    }
+
+    public void purgeMarkers(){
+        myOpenMapView.getOverlays().removeIf(x -> x.getClass() == ItemizedIconOverlay.class);
+    }
+
 
     private void initialiserLocalisation() {
         Log.w("CARTOGRAPGY_ACTIVITY_gps", "initialiser location ");
@@ -446,6 +521,8 @@ public class CartographyActivity extends AppCompatActivity {
 //            latitude.setText("error");
 //            longitude.setText("error");
     }
+
+
 
     ;
 }

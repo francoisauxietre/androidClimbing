@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 import androidx.room.TypeConverter;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ import frox.world.com.R;
 import frox.world.com.controller.cartography.CartographyActivity;
 import frox.world.com.controller.climber.ClimberActivity;
 import frox.world.com.firebase.FirebaseActivity;
+import frox.world.com.permissionManager.PermissionsManager;
 import frox.world.com.room.recyclerView.RecyclerUserActivity;
 import frox.world.com.controller.user.UserActivity;
 import frox.world.com.room.AppDatabase;
@@ -51,6 +53,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //requete des permissions
+        String[] mesPermissions = {
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.INTERNET,
+                Manifest.permission.ACCESS_NETWORK_STATE,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+        };
+        PermissionsManager.checkPermission(this, mesPermissions);
 
         db = Room.databaseBuilder(getApplicationContext(),
                 AppDatabase.class, "database-name").build();

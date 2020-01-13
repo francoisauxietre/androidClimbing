@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".controller.cartography.CartographyActivity">
 
+
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -13,25 +15,59 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="114dp"
+            android:layout_weight="1">
+
+
+            <EditText
+                android:id="@+id/activity_cartography_search_bar"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/activity_cartography_input_city"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/activity_cartography_button_search"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/activity_cartography_button_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onSearch"
+                android:text="@string/activity_cartography_button_search"
+
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/activity_cartography_latitude"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/activity_cartography_text_view_latitude" />
 
+
         <TextView
             android:id="@+id/activity_cartography_longitude"
-            android:layout_width="match_parent"
+            android:layout_width="198dp"
             android:layout_height="wrap_content"
             android:text="@string/activity_cartography_text_view_longitude" />
 
         <TextView
             android:id="@+id/activity_cartography_adress"
-            android:layout_width="match_parent"
+            android:layout_width="198dp"
             android:layout_height="wrap_content"
             android:text="@string/activity_cartography_text_view_adress" />
 
@@ -39,7 +75,7 @@
         <org.osmdroid.views.MapView
             android:id="@+id/mapview"
             android:layout_width="match_parent"
-            android:layout_height="600dp">
+            android:layout_height="564dp">
 
         </org.osmdroid.views.MapView>
 
@@ -54,7 +90,8 @@
         android:background="#ffffff"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/locate">
+        android:src="@drawable/locate"
+        android:onClick="recentreMap">
 
     </ImageButton>
 </androidx.constraintlayout.widget.ConstraintLayout>
