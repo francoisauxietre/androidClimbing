@@ -124,8 +124,15 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
 
     }
 
-    //quand on restera cliker sur l'image on pourra la suprimer
-    public interface OnItemClickListener {
+
+    public void setOnItemClickListener(OnItemClickListener _itemClickListener) {
+
+        itemClickListener = _itemClickListener;
+    }
+
+
+    //quand on restera cliker sur l'image on pourra la supprimer
+    private interface OnItemClickListener {
         void onItemCLick(int position);
 
         void onItemEdit(int position);
@@ -134,10 +141,5 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
 
         void onDeleteClick(int position);
 
-    }
-
-    public void setOnItemClickListener(OnItemClickListener _itemClickListener) {
-
-        itemClickListener = _itemClickListener;
     }
 }
