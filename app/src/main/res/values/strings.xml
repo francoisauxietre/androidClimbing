@@ -183,9 +183,12 @@
     <!--    cartography   -->
     <string name="activity_cartography_text_view_latitude">latitude</string>
     <string name="activity_cartography_text_view_longitude">longitude</string>
+    <string name="activity_cartography_text_view_altitude">altitude</string>
     <string name="activity_cartography_text_view_adress">adress</string>
     <string name="activity_cartography_enable_gps">please enable gps to find your location</string>
     <string name="activity_cartography_input_city">City</string>
+    <string name="activity_cartography_locate">locate</string>
+
 
 
     <!--    photo -->

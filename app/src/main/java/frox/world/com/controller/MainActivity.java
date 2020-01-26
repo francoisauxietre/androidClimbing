@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         climber = findViewById(R.id.activity_main_button_climber);
         //card = findViewById(R.id.activity_main_button_card);
         url = findViewById(R.id.activity_main_button_url);
-        cartography = findViewById(R.id.mapview);
+        cartography = findViewById(R.id.activity_main_button_cartography);
 
         userProfile = findViewById(R.id.activity_main_button_user_profile);
         userProfile.setOnClickListener(new View.OnClickListener() {

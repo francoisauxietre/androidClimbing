@@ -68,7 +68,7 @@ public class CartographyActivity extends AppCompatActivity {
     private String bestProvider;
     private TextView latitude;
     private TextView longitude;
-    private TextView address;
+    private TextView altitude;
     private ImageButton locate;
     private ArrayList<GeoPoint> path;
     private double zoom = 5.0;
@@ -94,7 +94,7 @@ public class CartographyActivity extends AppCompatActivity {
 
         latitude = findViewById(R.id.activity_cartography_latitude);
         longitude = findViewById(R.id.activity_cartography_longitude);
-        address = findViewById(R.id.activity_cartography_adress);
+        altitude = findViewById(R.id.activity_cartography_altitude);
         //test
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
         fusedLocationClient.getLastLocation()
@@ -107,7 +107,7 @@ public class CartographyActivity extends AppCompatActivity {
                             lon = location.getLongitude();
                             latitude.setText("latitude :" + location.getLatitude());
                             longitude.setText("longitude :" + location.getLongitude());
-                            address.setText("altitude :" + location.getAltitude());
+                            altitude.setText("altitude :" + location.getAltitude());
                         }
                     }
                 });
@@ -126,9 +126,10 @@ public class CartographyActivity extends AppCompatActivity {
         etat = 0;
 
 
-        myOpenMapView = findViewById(R.id.mapview);
+        myOpenMapView = findViewById(R.id.activity_cartography_mapview);
         myOpenMapView.setBuiltInZoomControls(true);
         myOpenMapView.setClickable(true);
+
         //controll du zoom 1 carte entiere on pourra ici afficher des groupement de puces
         myOpenMapView.getController().setZoom(zoom);
 
@@ -252,7 +253,7 @@ public class CartographyActivity extends AppCompatActivity {
                         addressFragments.add(adresse.getAddressLine(i));
                     }
                     Log.d("GPS", TextUtils.join(System.getProperty("line.separator"), addressFragments));
-                    address.setText(TextUtils.join(System.getProperty("line.separator"), addressFragments));
+                    altitude.setText(TextUtils.join(System.getProperty("line.separator"), addressFragments));
                 }
             }
         }

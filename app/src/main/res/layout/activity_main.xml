@@ -39,7 +39,7 @@
             android:text="@string/activity_main_button_card" />
 
         <Button
-            android:id="@+id/mapview"
+            android:id="@+id/activity_main_button_cartography"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/activity_main_button_cartography"/>
