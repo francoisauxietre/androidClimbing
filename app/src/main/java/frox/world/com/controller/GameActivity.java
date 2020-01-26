@@ -21,7 +21,7 @@ import java.util.Calendar;
 import java.util.Random;
 
 import frox.world.com.R;
-import frox.world.com.controller.card.CardActivity;
+import frox.world.com.controller.card.Card2Activity;
 import frox.world.com.model.Card;
 
 public class GameActivity extends AppCompatActivity implements View.OnClickListener {
@@ -359,7 +359,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent cardActivityIntent = new Intent(GameActivity.this, CardActivity.class);
+                        Intent cardActivityIntent = new Intent(GameActivity.this, Card2Activity.class);
                         cardActivityIntent.putExtra("card", card);
                         startActivity(cardActivityIntent);
                         finish();

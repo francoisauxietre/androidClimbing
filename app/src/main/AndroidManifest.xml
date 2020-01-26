@@ -16,7 +16,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat">
-        <activity android:name=".controller.authentication.LoginActivity"></activity>
+        <activity android:name=".controller.CardDetailActivity"></activity>
+        <activity android:name=".controller.CardActivity" />
+        <activity android:name=".controller.ProfilActivity" />
+        <activity android:name=".controller.FriendActivity" />
+        <activity android:name=".controller.authentication.LoginActivity" />
         <activity android:name=".firebase.ImageActivity" />
         <activity android:name=".firebase.ClimberDetailsActivity" />
         <activity android:name=".firebase.NewClimberActivity" />
@@ -31,7 +35,7 @@
         <activity android:name=".controller.climber.ClimberActivity" />
         <activity android:name=".controller.ApiActivity" />
         <activity
-            android:name=".controller.card.CardActivity"
+            android:name=".controller.card.Card2Activity"
             android:label="@string/title_activity_card"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".controller.HomeActivity" />

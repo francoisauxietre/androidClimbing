@@ -4,55 +4,73 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".controller.HomeActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    <ImageButton
+        android:id="@+id/activity_home_button_profile"
+        android:layout_width="80dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="2dp"
+        android:text="@string/activity_home_button_start"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/gon2" />
 
-        <Button
-            android:id="@+id/activity_home_button_home"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:background="@color/colorPrimary"
-            android:text="@string/activity_home_button_home"
-            android:textSize="20sp" />
-        <!--        padding pour espace autour du texte-->
-        <ImageView
-            android:id="@+id/activity_home_imageview_android"
-            android:layout_width="100dp"
-            android:layout_height="266dp"
-            android:layout_marginTop="30dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/gon" />
+    <ImageButton
+        android:id="@+id/activity_home_button_friends"
+        android:layout_width="99dp"
+        android:layout_height="162dp"
+        android:layout_marginStart="12dp"
+        android:text="@string/activity_home_button_start"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/activity_home_button_profile"
+        app:srcCompat="@drawable/friends" />
 
-        <Button
-            android:id="@+id/activity_home_button_start"
-            android:layout_width="200dp"
-            android:layout_height="80dp"
-            android:padding="30dp"
-            android:text="@string/activity_home_button_start"
-            android:textSize="20sp" />
-        <ImageButton
-            android:layout_width="20dp"
-            android:layout_height="30dp"/>
+    <ImageButton
+        android:id="@+id/activity_home_button_carte_min"
+        android:layout_width="104dp"
+        android:layout_height="156dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/activity_home_button_start"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/activity_home_button_friends"
+        app:srcCompat="@drawable/carte_min" />
 
-        <TextView
-            android:id="@+id/activity_home_textview_ess"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:textSize="30sp"
-            android:background="#909090"
-            android:text="ess" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-android:background="#255000"
-            />
+    <ImageButton
+        android:id="@+id/activity_home_button_maps"
+        android:layout_width="80dp"
+        android:layout_height="140dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/activity_home_button_start"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/activity_home_button_carte_min"
+        app:srcCompat="@drawable/maps" />
 
-    </LinearLayout>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="408dp"
+        android:layout_height="444dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CLIMBING-ZONE"
+        android:textColor="@color/colorBlack"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
