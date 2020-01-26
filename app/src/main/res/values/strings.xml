@@ -14,12 +14,32 @@
     <string name="editAction">Edit</string>
     <string name="errorImplementation">You must inplement the method OnButtonClickedListener please</string>
 
-<!--    fragment detail card-->
+    <!--    fragment detail card-->
     <string name="fragment_detail_card_back_card"> Back card image</string>
     <string name="fragment_detail_card_cotation">8</string>
     <string name="fragment_detail_site">site</string>
+    <string name="fragment_detail_card_star">2</string>
+    <string name="fragment_detail_card_rank">1/200</string>
+    <string name="fragment_detail_card_climbingrouteName">more beautiful than the sea</string>
+    <string name="fragment_detail_card_tactical">tactical</string>
+    <string name="fragment_detail_card_technical">technical</string>
+    <string name="fragment_detail_card_mental">mental</string>
+    <string name="fragment_detail_card_physical">physical</string>
+    <string name="fragment_detail_card_back">back card</string>
+    <string name="fragment_detail_card_background1">back card</string>
+    <string name="fragment_detail_card_textview_name">site</string>
+    <string name="fragment_detail_card_demi_right">demi right</string>
+    <string name="fragment_detail_card_demi_left">demi left</string>
+    <string name="fragment_detail_card_qrcode">qrcode</string>
+    <string name="fragment_detail_card_level">level</string>
+    <string name="fragment_detail_card_image">image</string>
+    <string name="fragment_detail_card_name">card name</string>
+    <string name="fragment_detail_card_android">card detail</string>
+    <string name="fragment_detail_card_background2">background</string>
+    <string name="fragment_detail_card_user">user</string>
 
-<!--    fragment card-->
+
+    <!--    fragment card-->
 
     <!--    gestion de string dans les logs ou certains boutons-->
     <string name="addPhoto">Please add a photo</string>
