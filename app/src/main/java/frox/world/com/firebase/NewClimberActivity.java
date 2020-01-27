@@ -70,6 +70,7 @@ public class NewClimberActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_climber);
+
         lastName = findViewById(R.id.activity_new_climber_last_name);
         firstName = findViewById(R.id.activity_new_climber_first_name);
         date = findViewById(R.id.activity_new_climber_date);

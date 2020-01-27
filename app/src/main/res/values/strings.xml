@@ -189,8 +189,10 @@
     <string name="activity_cartography_input_city">City</string>
     <string name="activity_cartography_locate">locate</string>
 
-
-
+<!--    activity friend-->
+    <string name="activity_friend_first_name"></string>
+    <string name="activity_friend_last_name"></string>
+    <string name="activity_friend_ask">Ask for friend</string>
     <!--    photo -->
     <string name="activity_photo_button_save">Save</string>
     <string name="fr">us</string>

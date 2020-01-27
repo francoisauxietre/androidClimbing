@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(firebaseIntent);
             }
         });
+
         //demande a l'utilisateur son nom et prenom
         firstName = findViewById(R.id.activity_main_edit_text_first_name);
         lastName = findViewById(R.id.activity_main_edit_text_last_name);
@@ -88,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
 
         climber = findViewById(R.id.activity_main_button_climber);
         //card = findViewById(R.id.activity_main_button_card);
+
         url = findViewById(R.id.activity_main_button_url);
         cartography = findViewById(R.id.activity_main_button_cartography);
 
@@ -96,8 +98,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent userProfileIntent = new Intent(MainActivity.this, UserActivity.class);
-                userProfileIntent.putExtra("firstName", firstName.getText());
-                userProfileIntent.putExtra("lastName", lastName.getText());
+                userProfileIntent.putExtra("firstName", firstName.getText().toString());
+                userProfileIntent.putExtra("lastName", lastName.getText().toString());
 
                 startActivity(userProfileIntent);
 

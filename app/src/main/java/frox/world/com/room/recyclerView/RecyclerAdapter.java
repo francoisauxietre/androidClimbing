@@ -39,7 +39,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         holder.first_name.setText(currentUser.getFirst_name());
         holder.last_name.setText(currentUser.getLast_name());
         holder.birth.setText(currentUser.getBirth());
-        holder.town.setText(currentUser.getTown());
+        holder.address.setText(currentUser.getAddress());
         holder.phone_number.setText(currentUser.getPhone_number());
         holder.department.setText(currentUser.getDepartment());
     }
@@ -53,7 +53,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         TextView first_name;
         TextView last_name;
         TextView birth;
-        TextView town;
+        TextView address;
         TextView department;
         TextView phone_number;
 
@@ -62,7 +62,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             first_name = itemView.findViewById(R.id.item_first_name);
             last_name = itemView.findViewById(R.id.item_last_name);
             birth = itemView.findViewById(R.id.item_birth);
-            town =itemView.findViewById(R.id.item_town);
+            address =itemView.findViewById(R.id.item_town);
             phone_number = itemView.findViewById(R.id.item_phone_number);
             department = itemView.findViewById(R.id.item_department);
 

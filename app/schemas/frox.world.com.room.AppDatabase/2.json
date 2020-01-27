@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 2,
-    "identityHash": "ed704bbb51fee1e74b4f6fd4fbf67ff6",
+    "identityHash": "50693e5575a4c0054b72308a2c73ce16",
     "entities": [
       {
         "tableName": "user_table",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `first_name` TEXT, `last_name` TEXT, `birth` TEXT, `phone_number` TEXT, `town` TEXT, `department` TEXT, `rating_bar` INTEGER NOT NULL, `image` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `first_name` TEXT, `last_name` TEXT, `birth` TEXT, `email` TEXT, `phone_number` TEXT, `address` TEXT, `department` TEXT, `rating_bar` INTEGER NOT NULL, `image` INTEGER NOT NULL, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "id",
@@ -33,14 +33,20 @@
             "notNull": false
           },
           {
+            "fieldPath": "email",
+            "columnName": "email",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
             "fieldPath": "phone_number",
             "columnName": "phone_number",
             "affinity": "TEXT",
             "notNull": false
           },
           {
-            "fieldPath": "town",
-            "columnName": "town",
+            "fieldPath": "address",
+            "columnName": "address",
             "affinity": "TEXT",
             "notNull": false
           },
@@ -76,7 +82,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ed704bbb51fee1e74b4f6fd4fbf67ff6')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '50693e5575a4c0054b72308a2c73ce16')"
     ]
   }
 }

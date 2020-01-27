@@ -46,7 +46,7 @@ public class RecyclerUserActivity extends AppCompatActivity implements View.OnCl
         fa.setLast_name("ox");
         fa.setBirth("18/09/1972");
         fa.setDepartment("35");
-        fa.setTown("rennes");
+        fa.setAddress("rennes");
         this.usersList.add(fa);
 
         User fa1 = new User();
@@ -54,7 +54,7 @@ public class RecyclerUserActivity extends AppCompatActivity implements View.OnCl
         fa.setLast_name("ox");
         fa.setBirth("18/09/1972");
         fa.setDepartment("35");
-        fa.setTown("rennes");
+        fa.setAddress("rennes");
         this.usersList.add(fa);
 
         User fa2 = new User();
@@ -62,28 +62,28 @@ public class RecyclerUserActivity extends AppCompatActivity implements View.OnCl
         fa.setLast_name("ox");
         fa.setBirth("18/09/1972");
         fa.setDepartment("35");
-        fa.setTown("rennes");
+        fa.setAddress("rennes");
         this.usersList.add(fa2);
         User fa3 = new User();
         fa.setFirst_name("fa");
         fa.setLast_name("ox");
         fa.setBirth("18/09/1972");
         fa.setDepartment("35");
-        fa.setTown("rennes");
+        fa.setAddress("rennes");
         this.usersList.add(fa3);
         User fa4 = new User();
         fa.setFirst_name("fa");
         fa.setLast_name("ox");
         fa.setBirth("18/09/1972");
         fa.setDepartment("35");
-        fa.setTown("rennes");
+        fa.setAddress("rennes");
         this.usersList.add(fa4);
         User fa5 = new User();
         fa.setFirst_name("fa");
         fa.setLast_name("ox");
         fa.setBirth("18/09/1972");
         fa.setDepartment("35");
-        fa.setTown("rennes");
+        fa.setAddress("rennes");
         this.usersList.add(fa5);
         this.usersList.add(fa5);
         this.usersList.add(fa5);

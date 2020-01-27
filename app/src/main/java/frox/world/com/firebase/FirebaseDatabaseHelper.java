@@ -30,16 +30,29 @@ import java.util.List;
 import java.util.logging.Level;
 
 import frox.world.com.model.Climber;
+import frox.world.com.model.Friend;
+import frox.world.com.model.User;
 import io.fabric.sdk.android.services.network.HttpRequest;
 
 public class FirebaseDatabaseHelper {
     //private StorageReference storageReference;
+
+    //database des grimpeurs
     private DatabaseReference databaseReference;
+
+    //database des user
+    private DatabaseReference databaseReferenceUser;
+
+    //database des user
+    private DatabaseReference databaseReferenceFriend;
+
 
     private Uri imageUri;
 
     private FirebaseDatabase firebaseDatabase;
     private List<Climber> climberList = new ArrayList<>();
+    private List<User> userList = new ArrayList<>();
+    private List<Friend> friendList = new ArrayList<>();
 
     public interface DataStatus {
         void DataIsLoaded(List<Climber> climberList, List<String> keysList);
@@ -54,6 +67,8 @@ public class FirebaseDatabaseHelper {
     public FirebaseDatabaseHelper() {
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("climber");
+        databaseReferenceUser = firebaseDatabase.getReference("user");
+        databaseReferenceFriend = firebaseDatabase.getReference("friend");
     }
 
     public void getClimbers(final DataStatus dataStatus) {
@@ -77,11 +92,50 @@ public class FirebaseDatabaseHelper {
         });
     }
 
+    public void getUsers(final DataStatus dataStatus) {
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                userList.clear();
+                List<String> keysList = new ArrayList<>();
+                for (DataSnapshot keyNode : dataSnapshot.getChildren()) {
+                    keysList.add(keyNode.getKey());
+                    User user = keyNode.getValue(User.class);
+                    userList.add(user);
+                }
+                dataStatus.DataIsLoaded(climberList, keysList);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    public void getFriends(final DataStatus dataStatus) {
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                friendList.clear();
+                List<String> keysList = new ArrayList<>();
+                for (DataSnapshot keyNode : dataSnapshot.getChildren()) {
+                    keysList.add(keyNode.getKey());
+                    Friend friend = keyNode.getValue(Friend.class);
+                    friendList.add(friend);
+                }
+                dataStatus.DataIsLoaded(climberList, keysList);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
 
 
     public void addClimber(Climber climber, final DataStatus dataStatus) {
-
-
 
         String key = databaseReference.push().getKey();
         databaseReference.child(key).setValue(climber)
@@ -91,12 +145,34 @@ public class FirebaseDatabaseHelper {
                         dataStatus.DataIsInserted();
                     }
                 });
-
-        //peut etre mise dehors
-
-
-
     }
+
+
+    public void addUser(User user, final DataStatus dataStatus) {
+   String key = databaseReference.push().getKey();
+        databaseReferenceUser.child(key).setValue(user)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        dataStatus.DataIsInserted();
+                    }
+                });
+    }
+
+    public void addFriend(Friend friend, final DataStatus dataStatus) {
+        String key = databaseReference.push().getKey();
+        databaseReferenceUser.child(key).setValue(friend)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        dataStatus.DataIsInserted();
+                    }
+                });
+    }
+
+
+//TODO DELETE FRIEND ET UPDATE
+
 
     public void deleteClimber(String key, final DataStatus dataStatus) {
         databaseReference.child(key).setValue(null)

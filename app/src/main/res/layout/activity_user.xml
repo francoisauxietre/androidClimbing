@@ -58,7 +58,7 @@
             android:inputType="textPassword" />
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/activity_user_adress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -93,7 +93,7 @@
             android:stepSize="1" />
 
         <Button
-            android:id="@+id/button_submit"
+            android:id="@+id/activity_user_button_submit"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/activity_user_button_submit" />

@@ -9,6 +9,7 @@ import android.widget.ImageButton;
 
 import frox.world.com.R;
 import frox.world.com.controller.cartography.CartographyActivity;
+import frox.world.com.controller.user.UserActivity;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -29,6 +30,16 @@ public class HomeActivity extends AppCompatActivity {
         this.imageButtonMaps = findViewById(R.id.activity_home_button_maps);
 
         //listener sur le bouton
+        this.imageButtonProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent profilIntent = new Intent(HomeActivity.this, UserActivity.class);
+                profilIntent.putExtra("firstName", ' ');
+                profilIntent.putExtra("lastName", ' ');
+                startActivity(profilIntent);
+            }
+        });
+
         this.imageButtonFriends.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,13 +48,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        this.imageButtonProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent profilIntent = new Intent(HomeActivity.this, ProfilActivity.class);
-                startActivity(profilIntent);
-            }
-        });
+
 
         this.imageButtonCard.setOnClickListener(new View.OnClickListener() {
             @Override

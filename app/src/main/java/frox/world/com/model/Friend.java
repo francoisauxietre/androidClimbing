@@ -10,14 +10,15 @@ import java.io.Serializable;
 
 import lombok.Data;
 
-@Data
-@Entity(tableName = "user_table")
 // Entity une table chaque colonne est un attribut chaque ligne une instance de l'ojet user
 // constructed using an annotated java data object. Each entity is persisted into its own table.
-public class User implements Serializable {
+
+@Data
+@Entity(tableName = "friend_table")
+public class Friend  implements Serializable {
 
     //constructeur vide
-    public User() { }
+    public Friend() { }
 
     @PrimaryKey
     @NotNull
@@ -29,25 +30,5 @@ public class User implements Serializable {
 
     @ColumnInfo(name = "last_name")
     private String last_name;
-
-    @ColumnInfo(name = "birth")
-    private String birth;
-
-    @ColumnInfo(name = "email")
-    private String email;
-
-    @ColumnInfo(name = "phone_number")
-    private String phone_number;
-
-    @ColumnInfo(name = "address")
-    private String address;
-
-    @ColumnInfo(name = "department")
-    private String department;
-
-    @ColumnInfo(name = "rating_bar")
-    private int ratingbar;
-
-    @ColumnInfo(name = "image")
-    private int image;
 }
+
