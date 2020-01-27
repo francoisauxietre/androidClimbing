@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -318,22 +319,26 @@ public class CartographyActivity extends AppCompatActivity {
             //deja on va purger notre map de tous les markers qui peuvent y être
             purgeMarkers();
 
-            double lat = result.getDouble("lat");
-            double lon = result.getDouble("lon");
-            monMapController.setCenter(new GeoPoint(lat, lon));
+            double latitude = result.getDouble("latitude");
+            double longitude = result.getDouble("longitude");
+            monMapController.setCenter(new GeoPoint(latitude, longitude));
 
-            addMarker(new GeoPoint(lat, lon));
+            addMarker(new GeoPoint(latitude, longitude));
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
     }
 
-    public void addMarker(GeoPoint g){
+    public void addMarker(GeoPoint geoPoint){
         List<OverlayItem> mesItems = new ArrayList<>();
-        OverlayItem monOverlayItem = new OverlayItem("","", g);
-        Drawable newMarker = this.getResources().getDrawable(R.drawable.marker_default_focused_base);
+        OverlayItem monOverlayItem = new OverlayItem("","", geoPoint);
+
+        Drawable newMarker = this.getResources().getDrawable(R.drawable.marker_default);
         monOverlayItem.setMarker(newMarker);
+
+
+
 
         mesItems.add(monOverlayItem);
 

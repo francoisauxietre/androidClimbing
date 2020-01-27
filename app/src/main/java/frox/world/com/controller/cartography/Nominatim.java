@@ -57,9 +57,8 @@ public class Nominatim extends AsyncTask<URL,Integer,Long> {
                 result += str;
             }
 
-            //Log.e("coucou", br.readLine());
             JSONArray jsonArray = new JSONArray(result);
-            Log.e("toto", String.valueOf(jsonArray.length()));
+            Log.e("test", String.valueOf(jsonArray.length()));
             this.jsonResult = new JSONObject(jsonArray.get(0).toString());
         } catch (JSONException e) {
             e.printStackTrace();
