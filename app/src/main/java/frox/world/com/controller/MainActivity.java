@@ -89,7 +89,14 @@ public class MainActivity extends AppCompatActivity {
         home = findViewById(R.id.activity_main_button_home);
         api = findViewById(R.id.activity_main_button_api);
 
-        //climber = findViewById(R.id.activity_main_button_climber);
+        climber = findViewById(R.id.activity_main_button_climber);
+        climber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent firebaseClimberIntent = new Intent(MainActivity.this, ClimberActivity.class );
+                startActivity(firebaseClimberIntent);
+            }
+        });
         //card = findViewById(R.id.activity_main_button_card);
 
         url = findViewById(R.id.activity_main_button_url);

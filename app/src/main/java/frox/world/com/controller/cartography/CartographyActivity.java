@@ -310,8 +310,8 @@ public class CartographyActivity extends AppCompatActivity {
         maTextView.setText("");
     }
 
-    public void geolocalization(JSONObject result){
-        if(result == null){
+    public void geolocalization(JSONObject result) {
+        if (result == null) {
             return;
         }
 
@@ -319,25 +319,45 @@ public class CartographyActivity extends AppCompatActivity {
             //deja on va purger notre map de tous les markers qui peuvent y être
             purgeMarkers();
 
-            double latitude = result.getDouble("latitude");
-            double longitude = result.getDouble("longitude");
+            double latitude = result.getDouble("lat");
+            double longitude = result.getDouble("lon");
             monMapController.setCenter(new GeoPoint(latitude, longitude));
 
-            addMarker(new GeoPoint(latitude, longitude));
+            //addMarker(new GeoPoint(latitude, longitude));
 
+            ApiRequestRoutes.getRoutes(this);
         } catch (JSONException e) {
             e.printStackTrace();
         }
     }
 
-    public void addMarker(GeoPoint geoPoint){
+
+    public void addRouteMarkers(ArrayList<JSONObject> routes) {
+        purgeMarkers();
+
+        for (JSONObject result : routes) {
+            try {
+                double latitude = result.getDouble("latitude");
+                double longitude = result.getDouble("longitude");
+                GeoPoint point = new GeoPoint(latitude, longitude);
+                addMarker(point);
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+
+    }
+
+
+    public void addMarker(GeoPoint geoPoint) {
         List<OverlayItem> mesItems = new ArrayList<>();
-        OverlayItem monOverlayItem = new OverlayItem("","", geoPoint);
+        OverlayItem monOverlayItem = new OverlayItem("", "", geoPoint);
 
         Drawable newMarker = this.getResources().getDrawable(R.drawable.marker_default);
         monOverlayItem.setMarker(newMarker);
-
-
 
 
         mesItems.add(monOverlayItem);
@@ -355,11 +375,11 @@ public class CartographyActivity extends AppCompatActivity {
         myOpenMapView.getOverlays().add(currentLocationOverlay);
     }
 
-    public void addMarker(List<GeoPoint> l){
-        l.forEach(x -> addMarker(x));
+    public void addMarker(List<GeoPoint> l) {
+        l.forEach(this::addMarker);
     }
 
-    public void purgeMarkers(){
+    public void purgeMarkers() {
         myOpenMapView.getOverlays().removeIf(x -> x.getClass() == ItemizedIconOverlay.class);
     }
 
@@ -527,7 +547,6 @@ public class CartographyActivity extends AppCompatActivity {
 //            latitude.setText("error");
 //            longitude.setText("error");
     }
-
 
 
     ;
