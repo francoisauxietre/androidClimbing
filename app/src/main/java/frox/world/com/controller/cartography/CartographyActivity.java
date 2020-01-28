@@ -323,7 +323,7 @@ public class CartographyActivity extends AppCompatActivity {
             double longitude = result.getDouble("lon");
             monMapController.setCenter(new GeoPoint(latitude, longitude));
 
-            //addMarker(new GeoPoint(latitude, longitude));
+            monMapController.setZoom(10);
 
             ApiRequestRoutes.getRoutes(this);
         } catch (JSONException e) {
