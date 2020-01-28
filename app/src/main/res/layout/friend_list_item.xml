@@ -5,18 +5,20 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/climber_list_item_first_name"
+        android:id="@+id/friend_list_item_first_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginTop="4dp"
         android:text="TextView"
+        android:textColor="@color/colorBlack"
+        android:background="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/climber_list_item_last_name"
+        android:id="@+id/friend_list_item_last_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
@@ -24,31 +26,24 @@
         android:layout_marginBottom="4dp"
         android:text="TextView"
         android:textSize="20sp"
+        android:textColor="@color/colorBlack"
+        android:background="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/climber_list_item_first_name" />
+        app:layout_constraintTop_toBottomOf="@+id/friend_list_item_first_name" />
 
     <TextView
-        android:id="@+id/climber_list_item_date"
+        android:id="@+id/friend_list_item_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="5dp"
         android:text="TextView"
         android:textSize="20sp"
+        android:textColor="@color/colorBlack"
+        android:background="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/climber_list_item_category"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="4dp"
-        android:text="TextView"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/climber_list_item_date" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

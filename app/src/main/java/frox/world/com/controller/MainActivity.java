@@ -19,6 +19,7 @@ import frox.world.com.R;
 import frox.world.com.controller.cartography.CartographyActivity;
 import frox.world.com.controller.climber.ClimberActivity;
 import frox.world.com.firebase.FirebaseActivity;
+import frox.world.com.firebase.FirebaseFriendActivity;
 import frox.world.com.permissionManager.PermissionsManager;
 import frox.world.com.room.recyclerView.RecyclerUserActivity;
 import frox.world.com.controller.user.UserActivity;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private Button home;
     private Button api;
     private Button climber;
+    private Button friend;
     private Button card;
     private Button url;
     private Button cartography;
@@ -87,11 +89,20 @@ public class MainActivity extends AppCompatActivity {
         home = findViewById(R.id.activity_main_button_home);
         api = findViewById(R.id.activity_main_button_api);
 
-        climber = findViewById(R.id.activity_main_button_climber);
+        //climber = findViewById(R.id.activity_main_button_climber);
         //card = findViewById(R.id.activity_main_button_card);
 
         url = findViewById(R.id.activity_main_button_url);
         cartography = findViewById(R.id.activity_main_button_cartography);
+
+        friend = findViewById(R.id.activity_main_button_friend);
+        friend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent firebaseFriendIntent = new Intent(MainActivity.this, FirebaseFriendActivity.class );
+                startActivity(firebaseFriendIntent);
+            }
+        });
 
         userProfile = findViewById(R.id.activity_main_button_user_profile);
         userProfile.setOnClickListener(new View.OnClickListener() {
@@ -136,6 +147,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
 
         lastName.addTextChangedListener(new TextWatcher() {
             @Override
@@ -189,13 +202,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        climber.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent climberActivity = new Intent(MainActivity.this, ClimberActivity.class);
-                //startActivity(climberActivity);
-            }
-        });
+//        climber.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent climberActivity = new Intent(MainActivity.this, ClimberActivity.class);
+//                //startActivity(climberActivity);
+//            }
+//        });
 
         cartography.setOnClickListener(new View.OnClickListener() {
             @Override

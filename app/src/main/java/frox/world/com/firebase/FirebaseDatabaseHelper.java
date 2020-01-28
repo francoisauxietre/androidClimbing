@@ -43,7 +43,7 @@ public class FirebaseDatabaseHelper {
     //database des user
     private DatabaseReference databaseReferenceUser;
 
-    //database des user
+    //database des friend
     private DatabaseReference databaseReferenceFriend;
 
 
@@ -161,7 +161,7 @@ public class FirebaseDatabaseHelper {
 
     public void addFriend(Friend friend, final DataStatus dataStatus) {
         String key = databaseReference.push().getKey();
-        databaseReferenceUser.child(key).setValue(friend)
+        databaseReferenceFriend.child(key).setValue(friend)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {

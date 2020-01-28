@@ -6,7 +6,7 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/firebase_climber_recycler_view"
+        android:id="@+id/firebase_friend_recycler_view"
         android:layout_width="409dp"
         android:layout_height="729dp"
         app:layout_constraintBottom_toBottomOf="parent"

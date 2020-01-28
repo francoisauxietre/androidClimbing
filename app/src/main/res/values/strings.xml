@@ -189,7 +189,7 @@
     <string name="activity_cartography_input_city">City</string>
     <string name="activity_cartography_locate">locate</string>
 
-<!--    activity friend-->
+    <!--    activity friend-->
     <string name="activity_friend_first_name"></string>
     <string name="activity_friend_last_name"></string>
     <string name="activity_friend_ask">Ask for friend</string>
@@ -200,6 +200,13 @@
     <!--    recycler_user-->
     <string name="activity_recycler_user_button_new_user">Add</string>
 
+    <!--    firebase friend-->
+    <string name="firebase_friend_button_Ask">Ask for friend</string>
+
+    <!--    activity_friend_list_new_friend_menu-->
+    <string name="activity_friend_list_new_friend_menu">Add a new friend</string>
+
+    <string name="activity_friend_detail_user_id">user_id</string>
 
     <!--    user-->
     <string name="activity_user_first_name">Firstname</string>

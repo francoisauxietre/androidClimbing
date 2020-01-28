@@ -19,7 +19,7 @@
             android:text="@string/activity_main_button_home" />
 
         <Button
-            android:id="@+id/activity_main_button_climber"
+            android:id="@+id/activity_main_button_friend"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/activity_main_button_friends" />

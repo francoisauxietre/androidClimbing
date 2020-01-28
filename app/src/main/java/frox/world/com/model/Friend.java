@@ -30,5 +30,8 @@ public class Friend  implements Serializable {
 
     @ColumnInfo(name = "last_name")
     private String last_name;
+
+    @ColumnInfo(name = "id_user")
+    private Long id_user;
 }
 
