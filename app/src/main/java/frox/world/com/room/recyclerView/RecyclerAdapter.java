@@ -38,10 +38,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         User currentUser = usersList.get(position);
         holder.first_name.setText(currentUser.getFirst_name());
         holder.last_name.setText(currentUser.getLast_name());
-        holder.birth.setText(currentUser.getBirth());
-        holder.address.setText(currentUser.getAddress());
-        holder.phone_number.setText(currentUser.getPhone_number());
-        holder.department.setText(currentUser.getDepartment());
+//        holder.birth.setText(currentUser.getBirth());
+//        holder.address.setText(currentUser.getAddress());
+//        holder.phone_number.setText(currentUser.getPhone_number());
+//        holder.department.setText(currentUser.getDepartment());
     }
 
     @Override
@@ -52,19 +52,19 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView first_name;
         TextView last_name;
-        TextView birth;
-        TextView address;
-        TextView department;
-        TextView phone_number;
+//        TextView birth;
+//        TextView address;
+//        TextView department;
+//        TextView phone_number;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             first_name = itemView.findViewById(R.id.item_first_name);
             last_name = itemView.findViewById(R.id.item_last_name);
-            birth = itemView.findViewById(R.id.item_birth);
-            address =itemView.findViewById(R.id.item_town);
-            phone_number = itemView.findViewById(R.id.item_phone_number);
-            department = itemView.findViewById(R.id.item_department);
+//            birth = itemView.findViewById(R.id.item_birth);
+//            address =itemView.findViewById(R.id.item_town);
+//            phone_number = itemView.findViewById(R.id.item_phone_number);
+//            department = itemView.findViewById(R.id.item_department);
 
         }
 

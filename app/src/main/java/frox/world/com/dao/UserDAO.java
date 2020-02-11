@@ -14,7 +14,7 @@ import java.util.List;
 
 import frox.world.com.model.User;
 
-@Dao //defini les methodes pour acceder aux element de la base
+@Dao //F auxietre :defini les methodes pour acceder aux element de la base
 // don utilise les annotations pour (bind) lier le SQL a chaque  methode.
 // DAO data acces objects
 // 4  @Query, @Insert, @Update, @Delete
@@ -28,8 +28,8 @@ public interface UserDAO {
     @Query("SELECT * FROM user_table WHERE id = :userId")
     LiveData<User> getUser(long userId);
 
-//    @Query("SELECT * FROM user_table ")
-//    LiveData<List<User>> getAll();
+    @Query("SELECT * FROM user_table ")
+    LiveData<List<User>> getAll();
 
     //:userIds  = tous les Id de la table user
     @Query("SELECT * FROM user_table WHERE id IN (:userIds)")

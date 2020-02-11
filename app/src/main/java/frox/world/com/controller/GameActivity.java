@@ -345,7 +345,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         card.setStar((int) ratingBarStar.getRating());
         card.setDifficulty(difficulty);
         card.setInfo(info.getText().toString());
-        card.setDate(Calendar.getInstance().getTime());
+        card.setDate(Calendar.getInstance().getTime().toString());
         card.setClimbingRouteName(climbingroute.getText().toString());
         int place = new Random().nextInt(100);
         int random = new Random().nextInt(100)+100;

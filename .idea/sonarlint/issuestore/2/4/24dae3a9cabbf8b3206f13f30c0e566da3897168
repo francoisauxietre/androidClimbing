@@ -1,0 +1,21 @@
+
+™squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(«û³±
+™squid:S1186°"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(±¾ê
+msquid:S14501"QRemove the "db" field and declare it as a local variable in the relevant methods.(½µ×ùÿÿÿÿ
+>squid:S1068+"'Remove this unused "url" private field.(Ìİ¸ê
+Bsquid:S10681"&Remove this unused "db" private field.(½µ×ùÿÿÿÿ
+isquid:S1450+"RRemove the "url" field and declare it as a local variable in the relevant methods.(Ìİ¸ê
+Tsquid:S2589“"7Remove this expression which always evaluates to "true"(•“›ùÿÿÿÿ
+Tsquid:S2589©"7Remove this expression which always evaluates to "true"(•“›ùÿÿÿÿ
+Lsquid:S1068/"0Remove this unused "recyclerUser" private field.(ğ„–Äüÿÿÿÿ
+™squid:S1186™"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(±¾ê
+qsquid:S1450,"ZRemove the "cartography" field and declare it as a local variable in the relevant methods.(“Â…Ò
+qsquid:S1450)"URemove the "friend" field and declare it as a local variable in the relevant methods.(Áùòÿÿÿÿÿ
+rsquid:S1450("VRemove the "climber" field and declare it as a local variable in the relevant methods.(„õÏçıÿÿÿÿ
+™squid:S1186¢"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(«û³±
+qsquid:S1450-"ZRemove the "userProfile" field and declare it as a local variable in the relevant methods.(üµ¬²
+Rsquid:S1118ç":Add a private constructor to hide the implicit public one.(©×ÍÄ
+ssquid:S1450#"WRemove the "firebase" field and declare it as a local variable in the relevant methods.(ä™§ÿÿÿÿÿ
+jsquid:S1450&"SRemove the "home" field and declare it as a local variable in the relevant methods.(úÃÿ
+nsquid:S1450'"RRemove the "api" field and declare it as a local variable in the relevant methods.(†ÉŸ–øÿÿÿÿ
+Dsquid:S1068*"(Remove this unused "card" private field.(÷şæûÿÿÿÿ

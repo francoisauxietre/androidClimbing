@@ -14,7 +14,7 @@ import java.util.Date;
 import lombok.Data;
 @Entity(foreignKeys = @ForeignKey(entity = User.class,
         parentColumns = "id",
-        childColumns = "userId"))
+        childColumns = "id"),tableName = "card_table")
 @Data
 public class Card implements Serializable {
 
@@ -45,7 +45,7 @@ public class Card implements Serializable {
     private String photo;
 
     @ColumnInfo(name = "date")
-    private Date date;
+    private String date;
 
     //TODO erreur ici dans le java aussi de zone difficuty
     @ColumnInfo(name = "difficulty")

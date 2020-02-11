@@ -21,6 +21,8 @@ import frox.world.com.controller.climber.ClimberActivity;
 import frox.world.com.firebase.FirebaseActivity;
 import frox.world.com.firebase.FirebaseFriendActivity;
 import frox.world.com.permissionManager.PermissionsManager;
+import frox.world.com.room.RoomUserActivity;
+import frox.world.com.room.recyclerView.RecyclerCardActivity;
 import frox.world.com.room.recyclerView.RecyclerUserActivity;
 import frox.world.com.controller.user.UserActivity;
 import frox.world.com.room.AppDatabase;
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText firstName;
     private EditText lastName;
     private Button firebase;
+    private Button room;
 
     private Button createCard;
     private Button home;
@@ -46,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     private String userName;
     private Button recyclerUser;
 
-    private AppDatabase db;
+//    private AppDatabase db;
 
     private boolean firstNameActive;
     private boolean lastNameActive;
@@ -66,8 +69,8 @@ public class MainActivity extends AppCompatActivity {
         };
         PermissionsManager.checkPermission(this, mesPermissions);
 
-        db = Room.databaseBuilder(getApplicationContext(),
-                AppDatabase.class, "database-name").build();
+//        db = Room.databaseBuilder(getApplicationContext(),
+//                AppDatabase.class, "database-name").build();
 
         firebase = findViewById(R.id.activity_main_button_firebase);
         firebase.setOnClickListener(new View.OnClickListener() {
@@ -95,6 +98,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent firebaseClimberIntent = new Intent(MainActivity.this, ClimberActivity.class );
                 startActivity(firebaseClimberIntent);
+            }
+        });
+
+        room = findViewById(R.id.activity_main_button_room);
+        room.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent roomIntent = new Intent(MainActivity.this, RoomUserActivity.class );
+                startActivity(roomIntent);
             }
         });
         //card = findViewById(R.id.activity_main_button_card);

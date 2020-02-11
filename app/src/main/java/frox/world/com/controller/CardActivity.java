@@ -32,7 +32,7 @@ public class CardActivity extends AppCompatActivity implements CardFragment.OnBu
 
         Log.e(getClass().getSimpleName(), "Button clicked");
         if (detailCardFragment == null) {
-          //  startActivity(new Intent(this, CardDetailActivity.class));
+            startActivity(new Intent(this, CardDetailActivity.class));
         }
     }
 

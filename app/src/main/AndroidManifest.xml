@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat">
-        <activity android:name=".firebase.FriendDetailsActivity"></activity>
+        <activity android:name=".room.RoomUserActivity"></activity>
+        <activity android:name=".firebase.FriendDetailsActivity" />
         <activity android:name=".firebase.NewFriendActivity" />
         <activity android:name=".firebase.FirebaseFriendActivity" />
         <activity android:name=".controller.CardDetailActivity" />

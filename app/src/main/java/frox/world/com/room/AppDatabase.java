@@ -13,48 +13,63 @@ import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 import androidx.sqlite.db.SupportSQLiteOpenHelper;
 
+import frox.world.com.dao.CardDAO;
 import frox.world.com.dao.UserDAO;
+import frox.world.com.model.Card;
 import frox.world.com.model.User;
 
+//F Auxietre : une Database pemet de sauver en interne des données
+// on utilise des entités et un repository
 
-//Database is a holder class that uses annotation to define the list of
-// entities and database version. This class content defines the list of DAOs.
+@Database(entities = {User.class, Card.class}, version = 1)
+public abstract class AppDatabase extends RoomDatabase {
 
-
-@Database(entities = {User.class}, version = 2)
-public abstract class AppDatabase  extends RoomDatabase {
-
-    private static AppDatabase instance;
+    private static AppDatabase appDatabase;
 
     public abstract UserDAO userDAO();
+    public abstract CardDAO cardDAO();
 
+
+    // creation de la base de donnee
     public static synchronized AppDatabase getInstance(Context context) {
-        if (instance == null) {
-            instance = Room.databaseBuilder(context.getApplicationContext(),
-                    AppDatabase.class, "note_database")
+        if (appDatabase == null) {
+            appDatabase = Room.databaseBuilder(context.getApplicationContext(),
+                    AppDatabase.class, "database-climbing")
                     .fallbackToDestructiveMigration()
                     .addCallback(roomCallback)
                     .build();
         }
-        return instance;
+        return appDatabase;
     }
 
-
+    //execution non sur le thread principal
+    /**
+     * ajout en asynchrone pour ne pas bloquer le thread principal
+     */
     private static RoomDatabase.Callback roomCallback = new RoomDatabase.Callback() {
         @Override
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db);
-            new PopulateDbAsyncTask(instance).execute();
+            new PopulateDbAsyncTask(appDatabase).execute();
         }
     };
 
-    private static User addUser(final AppDatabase db, User user) {
-        db.userDAO().insertAll(user);
-        Log.i("APPDATABASE", "ajout d un nouvel utilisateur "+user.getFirst_name());
+    /**
+     * ajout d'un utilisateur
+     *
+     * @param database : la base de donnee
+     * @param user     : l'utilisateur a jouter
+     * @return l'utilisateur ajouter à la base de donnée
+     */
+    public static User addUser(final AppDatabase database, User user) {
+        database.userDAO().insertAll(user);
+        Log.i("APPDATABASE", "ajout d un nouvel utilisateur " + user.getFirst_name());
         return user;
     }
 
-
+    /**
+     * ajout en tache de fond
+     */
     private static class PopulateDbAsyncTask extends AsyncTask<Void, Void, Void> {
         private UserDAO userDAO;
 
@@ -67,27 +82,18 @@ public abstract class AppDatabase  extends RoomDatabase {
 
 
             User fa0 = new User();
-            fa0.setBirth("12/12/1972");
-            addUser(instance, fa0);
-
-            User fa = new User();
-            fa.setBirth("12/12/1972");
-            addUser(instance, fa);
+            fa0.setFirst_name("fafa");
+            fa0.setLast_name("auxietre");
+            addUser(appDatabase, fa0);
+            userDAO.insert(fa0);
+            Log.i("Appdatabase", "________________ajout de utilisateur "+fa0.getFirst_name() + "resuusi");
 
             User fa1 = new User();
-            fa1.setBirth("12/12/1972");
-            addUser(instance, fa1);
-
-            User fa2 = new User();
-            fa2.setBirth("12/12/1972");
-            addUser(instance, fa2);
-
-            User fa3 = new User();
-            fa3.setBirth("12/12/1972");
-            addUser(instance, fa3);
-
-//            userDao.insert(fa);
-//            userDao.insert(fa1);
+            fa1.setFirst_name("leon");
+            fa1.setLast_name("le cochon");
+            addUser(appDatabase, fa1);
+            userDAO.insert(fa1);
+            Log.i("Appdatabase", "________________ajout de utilisateur "+fa1.getFirst_name() + "resuusi");
             return null;
         }
     }

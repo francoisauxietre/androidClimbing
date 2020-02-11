@@ -23,6 +23,12 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
     private List<User> users;
 
     // CONSTRUCTOR
+    public UserAdapter() {
+        this.users = new ArrayList<>();
+        this.callback = null;
+    }
+
+    // CONSTRUCTOR
     public UserAdapter(Listener callback) {
         this.users = new ArrayList<>();
         this.callback = callback;
