@@ -18,7 +18,7 @@ import frox.world.com.dao.UserDAO;
 import frox.world.com.model.Card;
 import frox.world.com.model.User;
 
-//F Auxietre : une Database pemet de sauver en interne des données
+//F Auxietre : une Database permet de sauver en interne des données
 // on utilise des entités et un repository
 
 @Database(entities = {User.class, Card.class}, version = 1)

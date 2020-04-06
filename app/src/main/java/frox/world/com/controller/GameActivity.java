@@ -34,20 +34,26 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     private RatingBar ratingBar1;
     private RatingBar ratingBar2;
     private RatingBar ratingBar3;
+    private RatingBar ratingBar4;
 
     private float rating0 = 0;
     private float rating1 = 0;
     private float rating2 = 0;
     private float rating3 = 0;
+    private float rating4 = 0;
 
     private TextView total;
     private EditText info;
     private EditText climbingroute;
+
     private Button buttonSave;
+
     private ImageButton buttonReset0;
     private ImageButton buttonReset1;
     private ImageButton buttonReset2;
     private ImageButton buttonReset3;
+    private ImageButton buttonReset4;
+
     private ImageButton  picture;
     private String user;
     private String[] climbingrouteArray;
@@ -229,6 +235,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         ratingBar1 = findViewById(R.id.activity_game_ratingbar_mental);
         ratingBar2 = findViewById(R.id.activity_game_ratingbar_tactical);
         ratingBar3 = findViewById(R.id.activity_game_ratingbar_physical);
+        ratingBar4 = findViewById(R.id.activity_game_ratingbar_star);
+
         total = findViewById(R.id.activity_game_textview_total);
 
         //mise a jour du calcul
@@ -266,6 +274,15 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
+        //mise a jour du calcul pour le bouton star
+        ratingBar4.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            public void onRatingChanged(RatingBar ratingBar, float rating,
+                                        boolean fromUser) {
+                rating4 = (int) rating;
+                updateRating();
+            }
+        });
+
     }
 
 
@@ -279,6 +296,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
         ratingBarStar = findViewById(R.id.activity_game_ratingbar_star);
         buttonSave = findViewById(R.id.activity_main_button_save);
+
         buttonReset0 = findViewById(R.id.activity_game_button_reset_technical);
         buttonReset0.setOnClickListener(new View.OnClickListener() {
 
@@ -314,6 +332,15 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
+        buttonReset4 = findViewById(R.id.activity_game_button_reset_star);
+        buttonReset4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateRating();
+                ratingBar4.setRating(0);
+            }
+        });
+
 
         //message a l ecran pour verifier les valeur passer avec putextra a l'intent suivant
         buttonSave.setOnClickListener(new View.OnClickListener() {
@@ -322,6 +349,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(View v) {
                 //creation de la boite de dialogue
                 save();
+
             }
 
         });
@@ -346,7 +374,9 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         card.setDifficulty(difficulty);
         card.setInfo(info.getText().toString());
         card.setDate(Calendar.getInstance().getTime().toString());
+        //card.setClimbingRouteName("orpierre");
         card.setClimbingRouteName(climbingroute.getText().toString());
+
         int place = new Random().nextInt(100);
         int random = new Random().nextInt(100)+100;
         card.setRank(place +"/"+random);

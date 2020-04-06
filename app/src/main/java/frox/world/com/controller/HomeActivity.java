@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import frox.world.com.R;
+import frox.world.com.controller.card.Card2Activity;
 import frox.world.com.controller.cartography.CartographyActivity;
 import frox.world.com.controller.user.UserActivity;
 

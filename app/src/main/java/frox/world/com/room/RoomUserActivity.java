@@ -25,23 +25,23 @@ public class RoomUserActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_room_user);
-        recyclerView = findViewById(R.id.room_user_recycler_view);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setHasFixedSize(true);
 
-        final RoomUserAdapter adapter = new RoomUserAdapter();
-        recyclerView.setAdapter(adapter);
-
-        // on crée une instance de notre ViewModel
         viewModel = ViewModelProviders.of(this).get(ViewModel.class);
+            setContentView(R.layout.activity_room_user);
+            recyclerView = findViewById(R.id.room_user_recycler_view);
+            recyclerView.setLayoutManager(new LinearLayoutManager(this));
+            recyclerView.setHasFixedSize(true);
 
-        viewModel.getAllUsers().observe(this, new Observer<List<User>>() {
-            @Override
-            public void onChanged(@Nullable List<User> users) {
-                adapter.setUsers(users);
-            }
+            final RoomUserAdapter adapter = new RoomUserAdapter();
+            recyclerView.setAdapter(adapter);
+
+            // on crée une instance de notre ViewModel
+        viewModel.getAllUsers().observe(this, users -> {
+
+             adapter.setUsers(users);
         });
+
+
 
 //pour ajouter a doite l'effacement
 //        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,

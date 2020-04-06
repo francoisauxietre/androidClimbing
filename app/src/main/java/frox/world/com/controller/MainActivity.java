@@ -89,6 +89,9 @@ public class MainActivity extends AppCompatActivity {
         createCard = findViewById(R.id.activity_main_button_create_card);
         createCard.setEnabled(false);
 
+
+
+
         home = findViewById(R.id.activity_main_button_home);
         api = findViewById(R.id.activity_main_button_api);
 
@@ -109,7 +112,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(roomIntent);
             }
         });
-        //card = findViewById(R.id.activity_main_button_card);
+        card = findViewById(R.id.activity_main_button_card);
+        card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent card= new Intent(MainActivity.this, CardActivity.class);
+                startActivity(card);
+            }
+        });
 
         url = findViewById(R.id.activity_main_button_url);
         cartography = findViewById(R.id.activity_main_button_cartography);
